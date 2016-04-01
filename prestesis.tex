@@ -1,0 +1,1317 @@
+\documentclass[compress]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{default}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{wrapfig} %Figuras al lado de texto
+\usepackage[rflt]{floatflt} %Figuras flotantes entre el texto
+\usepackage{eso-pic}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{calc}
+\usepackage{tikz}
+\usepackage{longtable,multirow,booktabs,titling}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage{multimedia}
+%\usepackage{movie15}
+%\usepackage{media9}
+%\usepackage{hyperref}
+%\usepackage[active,tightpage]{}
+
+
+%\usepackage{xetex}
+%% del paquete raro
+%\usepackage{fontspec}
+%\usepackage{xunicode}
+%\usepackage{xltxtra}
+%\setmainfont{Gill Sans}
+%\setmonofont[Scale=0.86]{Andale Mono}
+\uselanguage{spanish}
+\languagepath{spanish}
+\deftranslation[to=spanish]{WHO?}{¿Quién?}
+\deftranslation[to=spanish]{WHEN?}{¿Cuando?}
+\definecolor{beamer@solarized@green}{HTML}{859900}
+%\usefonttheme{professionalfonts}
+\usefonttheme{serif}
+\setbeamercovered{transparent}
+%\usetheme{CambridgeUS}
+%\usetheme{Bergen} %me gusta
+\usetheme{JuanLesPins}
+%\usetheme{Berkeley} %me gusta
+%\usetheme{Goettingen}
+%\usetheme{Hannover} % me gusta
+%\usetheme{Szeged}
+%\usetheme{Singapore}
+%\usetheme{AnnArbor}
+\setbeamercolor{titlelike}{parent=structure} %%% Para quitarle el color de fondo
+%\setbeamercolor{block title}{fg=black,bg=gray!20}
+%\usetheme[width=1cm]{Bergen} %para modificar tamaño de la barra lateral
+%\def\insertimage{\includegraphics[width= 1cm]{imagenes/escudob.png}}
+%\def\insertauthorindicator{¿Quién?}% Default is "Who?"
+%\def\insertinstituteindicator{¿Donde?}% Default is "From?"
+%\def\insertdateindicator{¿Cuando?}% Default is "When?"
+\usecolortheme[RGB={46,139,87}]{structure}
+%\useoutertheme{shadow}
+\useoutertheme[]{miniframes}
+\useinnertheme{circles}
+\usefonttheme[onlylarge]{structuresmallcapsserif}
+\setbeamerfont{title}{shape=\itshape,family=\rmfamily}
+%\addtobeamertemplate{sidebar right}{}{
+ % \includegraphics[width=1.5cm,height=1.5cm]{imagenes/escudobt1.png}\\[0.5cm]
+  %\includegraphics[width=2cm,height=1cm]{imagenes/escudobit.png}
+%}
+\usetikzlibrary{trees}
+\usetikzlibrary{positioning}
+
+%\setbeamersize{sidebar width left=12pt}
+
+%\makeatletter
+%\addtobeamertemplate{sidebar left}{}{%
+  %\includegraphics[width=\beamer@sidebarwidth]{imagenes/escudob.png}%
+%}
+%\makeatother
+%\logo{r}{\includegraphics[width=1.2cm,keepaspectratio]{imagenes/escudob.png}}
+%con esto anulo la barra lateral
+%\makeatletter
+%\setbeamertemplate{sidebar canvas left}{}
+%\setbeamertemplate{sidebar left}{%
+ % \vspace*{\fill}
+  %\includegraphics[width=1.5]{imagenes/escudob.png}
+  %\vspace*{\fill}
+%}
+%\makeatother
+%\setbeamercolor{structure}{fg=green!80!black,bg=green!20!white}
+
+%\vspace{-2cm}
+\hspace{-5.5cm}
+\title{\Large{Importancia de las áreas verdes \\ 
+de la ciudad de Puebla para la avifauna}}\\[1cm]
+\author{\small{Fernando Dorantes Nieto}\\[1cm]
+Director de tesis\\  \scriptsize{Dr Juan Héctor García Chávez}}\\[-2cm]
+\date{}
+\usebackgroundtemplate { %
+\includegraphics[ width=\paperwidth,height=\paperheight] {imagenes/dibujpres12.png}}
+%\includegraphics[ width=\paperwidth,height=\paperheight] {imagenes/pichochos.png}}
+
+%\titlegraphic{\includegraphics[width=\textwidth,height=.5\textheight]{imagenes/escudob.png}}
+%\logo{\includegraphics[width=1.5cm]{imagenes/escudobi.png}}
+%\logo[]{%
+%\centering  
+%\makebox[0.95\paperwidth]{%
+    %\includegraphics[width=1.5cm,keepaspectratio]{imagenes/escudob.png}%
+    %\hfill%
+    %\includegraphics[width=1.5cm,keepaspectratio]{imagenes/escudobi.png}%
+  %}
+%}
+\section{Tesis}
+\begin{document}
+\begin{frame}
+\begin{wrapfigure}{c}{2cm}
+%\includegraphics[width= 1cm]{imagenes/escudob.png}
+\end{wrapfigure} 
+\begin{wrapfigure}{r}{0.5cm}
+\includegraphics[width= 1.5cm]{imagenes/escudos.png}
+\end{wrapfigure}
+\titlepage
+\vspace{-1cm}
+%\begin{enumerate}
+ %\item \tiny{Tesis que para presentar título de biólogo}
+% \item \tiny{Desarrollado con \LaTeX}
+%\end{enumerate}
+\end{frame}
+\fontsize{10}{2}
+\setbeamertemplate{logo}{}
+\section{Introducción}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+ \frametitle{Introducción}
+\vspace{-0.5cm}
+\begin{columns}[c]
+\column{.6\textwidth}
+\visible<2,3>{\begin{center}
+\includegraphics[scale=0.25]{imagenes/barrau.png}
+\end{center}}
+\column{.6\textwidth}<3>
+\visible<2,3>{\begin{center}
+\includegraphics[scale=0.25]{imagenes/barrar.png}
+\end{center}}
+\end{columns}
+
+\begin{center}
+\hspace*{-0.5cm}\includegraphics[scale=0.31]{imagenes/barrasd.png}
+\end{center}
+\end{frame}
+}
+
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+
+%\begin{frame}
+ %\frametitle{Introducción}
+ %\begin{itemize}
+%\tiny{  \item  El crecimiento de las ciudades representa un gran problema ambiental.\\
+ % Teniendo como consecuencia otros problemas como la disminución de la biodiversidad y el cambio de uso de suelo.
+ %\pause
+  %\tiny{\item El gran crecimiento de las ciudades se puede ver en todos lados.\\
+  %De acuerdo con la ONU (United Nations, 2014), el 54\% de la población humana vive en ciudades.\\}}
+  %\end{itemize}
+%\begin{center}
+%\includegraphics[scale=0.08]{imagenes/siluetashumanas.png}
+
+%\end{center}
+
+%\end{frame}
+%}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+
+\begin{frame}
+\frametitle{Grandes regiones asfaltadas}
+%\begin{itemize}
+%\tiny{ \item Se conocen en el país 377  centros urbanos. La región central del país es la más densamente poblada.\\
+ %Dicha región está representada por las ciudades de: México, Toluca, Puebla, Cuernavaca, Querétaro y Pachuca.
+%\pause
+%\tiny{\item Para el caso de la ciudad de Puebla, la situación no es muy diferente, encontrando un alto grado de crecimiento}}\\[-1cm]
+
+%\end{itemize}\\[-1cm]
+\vspace{-1cm}
+\begin{center}
+\hspace*{-0.5cm}\includegraphics[scale=0.3]{imagenes/Internet/mapa1.jpg}
+
+\end{center}
+
+\end{frame}
+}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{Sitios hostiles}
+\vspace{-1cm}
+
+\begin{center}
+\hspace*{-1cm}\includegraphics[scale=0.33]{imagenes/barrasd2.png}\\
+
+\end{center}
+\vspace{-0.5cm}
+\begin{columns}
+\column{0.5\textwidth}
+\visible<2,3>{\begin{center}
+\hspace*{-0.8cm}\includegraphics[scale=0.2]{imagenes/lineas1.png}\\
+
+\end{center}}
+\column{0.5\textwidth}
+\visible<2,3>{\begin{center}
+\hspace*{-0.5cm}\includegraphics[scale=0.2]{imagenes/lineas.png}\\
+
+\end{center}}
+
+\end{columns}
+\end{frame}
+}
+
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{No todo es hostilidad}
+%\vspace{-1.5cm}
+%\begin{center}
+%\hspace*{-1cm}\includegraphics[scale=0.27]{imagenes/barrasd3.png}\\
+
+%\end{center}
+
+%\end{frame}
+%}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{No todo es hostilidad}
+\vspace{-1.5cm}
+
+\begin{center}
+\hspace*{-1cm}\includegraphics[width=12.8cm,height=5cm]{imagenes/barrasd4.png}\\
+
+\end{center}
+
+\end{frame}
+}
+
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{}
+%\begin{itemize}
+%\small{\item No todo es hostilidad}
+%\pause
+%\tiny{ \item Sin embargo las ciudades tienen todos los atributos propios de un ecosistema.}
+%\pause
+%\tiny{\item Comprenden una matriz de concreto y asfalto alternada por cambios abruptos que pueden ser las áreas verdes, camellones, terrenos baldíos etc.}
+%\pause
+%\tiny{\item Estudios han demostrado que dichas áreas verdes son sitios atractivos para diversos organismos}
+
+%\end{itemize}\\[-1cm]
+
+%\end{frame}
+%}
+
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{Ecología urbana}
+%\vspace{-0.5cm}
+
+%\begin{center}
+%\hspace*{-1cm}\includegraphics[scale=0.25]{imagenes/mapa1pres.png}\\
+
+%\end{center}
+
+%\end{frame}
+%}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{¿Qué falta por hacer?}
+\vspace{-0.5cm}
+
+\begin{center}
+\hspace*{-1cm}\includegraphics[scale=0.29]{imagenes/barrasd5.png}\\
+
+\end{center}
+
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{¿Qué falta por hacer?}
+\vspace{-0.5cm}
+
+\begin{center}
+\hspace*{-1cm}\includegraphics[scale=0.29]{imagenes/barrasd6.png}\\
+
+\end{center}
+
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{¿Qué falta por hacer?}
+\vspace{-0.5cm}
+
+\begin{center}
+\hspace*{-1cm}\includegraphics[scale=0.29]{imagenes/barrasdn.png}\\
+
+\end{center}
+
+\end{frame}
+}
+
+
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{¿Qué falta por hacer?}
+%\vspace{-0.5cm}
+
+%\begin{center}
+%\hspace*{-1cm}\includegraphics[scale=0.25]{imagenes/barrasd7.png}\\
+
+%\end{center}
+
+%\end{frame}
+%}
+
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{}
+%\begin{itemize}
+%\small{\item Ecología Urbana}
+%\pause
+%\tiny{ \item Las áreas verdes son los hábitats más parecidos que encontramos en zonas rurales  en cuanto a la estructura de la vegetación.}
+%\pause
+%\tiny{\item Se han realizado diversos estudios en varios estados del país.}
+%\pause
+%\tiny{\item Sin embargo la gran mayoría de los estudios solo toma en cuenta las áreas verdes ignorando el resto de las ciudades.}
+
+%\end{itemize}\\[-1cm]
+
+%\end{frame}
+%}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{Objetivos}
+\vspace{-1.5cm}
+\begin{enumerate}
+\normalsize{ \item Describir la comunidad de aves de la ciudad de Puebla.}\\[1cm]
+\pause
+\normalsize{\item Comparar la comunidad de aves de las áreas verdes con las áreas grises adyacentes a dichas áreas verdes, por medio de índices de diversidad $\alpha$ y $\beta$.}\\[1cm]
+\pause
+\normalsize{\item  Determinar la importancia relativa de las áreas verdes como sitios  refugio para las aves.}\\[0.5cm]
+\pause
+\normalsize{ \item Comparar la estructura  y riqueza de los gremios de las áreas verdes y grises de la ciudad de Puebla.}\\[1cm]
+
+\end{enumerate}\\[-1cm]
+
+\end{frame}
+}
+
+
+
+\section{Material y método}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{Material y método}
+\begin{columns}[c]
+%\column{.7\textwidth}
+\column{.5\textwidth}
+
+\vspace{-1cm}
+\begin{center}
+%\hspace*{-1cm}\includegraphics[scale=0.36]{imagenes/mapapueblagen.png}\\
+\hspace*{-0.5cm}\includegraphics[scale=0.4]{imagenes/mapapuez1.png}\\
+
+\end{center}
+\pause
+\column{.4\textwidth}
+\vspace{-2.3cm}
+\begin{itemize}
+\small{  \item   Altitud: 2160 m\\
+Temperatura: 17$^{\circ}$C\\}\\[1cm]
+\pause
+\small{ \item Clima templado subhúmedo\\
+Precipitación: 900mm}\\[1cm]
+\pause
+\small{ \item Área: 230 Km$^{2}$.}\\[1cm]
+\pause
+\small{ \item  1,539,839 habitantes.}
+\end{itemize}
+\end{columns}
+\end{frame}
+}
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{}
+%\vspace{-0.5cm}
+
+%\begin{center}
+%\includegraphics[scale=0.27]{imagenes/Internet/strongs.jpg}\\
+
+%\end{center}
+
+%\end{frame}
+%}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+
+\begin{frame}
+\frametitle{Áreas verdes}
+\begin{center}
+\includegraphics[scale=0.32]{imagenes/mapaareaspres.png}\\
+\end{center}
+%{\footnotesize
+%\begin{longtable}[c] {lc} 
+%\caption{} \\ \toprule
+%Área verde & Área (hectáreas)  \\ \midrule
+%Parque Laguna de Chapulco  & 18   \\
+%Ciudad universitaria BUAP & 106 \\
+%Los Fuertes & 104  \\
+%Panteón Municipal  & 19  \\
+%Parque del Arte  & 8  \\
+%Parque del rio Atoyac & 55  \\
+%Parque Ecológico  & 65  \\
+%Parque Juárez  & 6  \\
+%Parque Paseo Bravo & 5  \\ \bottomrule
+%\end{longtable}
+%}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{}
+\vspace{-0.5cm}
+
+\begin{center}
+\hspace*{-1cm}\includegraphics[scale=0.25]{imagenes/areaecol1.png}\\
+
+\end{center}
+
+\end{frame}
+}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{}
+\vspace{-0.5cm}
+
+\begin{center}
+\hspace*{-1cm}\includegraphics[scale=0.25]{imagenes/areaecol2.png}\\
+
+\end{center}
+
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{}
+\begin{center}
+{\normalsize
+\begin{tabular}{ccc} \toprule
+Área verde & Puntos \\ \midrule
+Parque Laguna de Chapulco & 6 \\
+Ciudad universitaria BUAP & 20 \\
+Los Fuertes & 20 \\
+Panteón Municipal & 8  \\
+Parque del Arte & 5 \\
+Parque del Atoyac & 12 \\
+Parque Ecológico & 14 \\
+Parque Juárez & 3 \\
+Parque Paseo bravo & 3 \\ \bottonrule
+ ×
+\end{tabular}
+}
+\end{center}
+\end{frame}
+}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{}
+\vspace{-0.5cm}
+
+\begin{center}
+\hspace*{-1cm}\includegraphics[scale=0.25]{imagenes/disenin.png}\\
+
+\end{center}
+
+\end{frame}
+}
+
+
+
+%%%los libros murieron
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{}
+%\begin{itemize}
+%\small{ \item Temporada migratoria (enero-marzo) y la reproductiva(abril-junio).}
+%\small{ \item Cuatro veces (dos veces por temporada).}
+%\small{ \item Desde  8:00 am hasta terminar los puntos de conteo.}\\[-8cm]
+%\end{itemize}
+%\begin{columns}[t]
+%\column{.3\textwidth}
+%\centering
+%\includegraphics[scale=0.45]{imagenes/Internet/van.jpg}\\
+%\column{.3\textwidth}
+%\centering
+%\includegraphics[scale=0.4]{imagenes/Internet/howell.jpg}\\
+%\column{.3\textwidth}
+%\centering
+%\includegraphics[scale=0.25]{imagenes/Internet/colibries.jpg}
+%\end{columns}
+%\begin{itemize}
+%\small{ \item American Ornithologist Union (AOU 2014). }
+%\small{ \item International Ornithological Committee (IOC 2014).}
+%\end{itemize}
+%\end{frame}
+%}
+
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{}
+%\begin{itemize}
+%\small{ \item La estacionalidad y los gremios de las especies las definí con la guía Ehrlich y colaboradores (1988) .}
+%\end{itemize}
+%\begin{center}
+%\includegraphics[scale=0.25]{imagenes/Internet/erlich.jpg}
+
+%\end{center}
+%\end{frame}
+%}
+%%%%%%%%%%%%%los libros murieron
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{Análisis de diversidad}
+%\vspace{-2cm}
+%\hspace{-1cm}
+%\begin{center}
+%\includegraphics[scale=0.22]{imagenes/diagramadiversi1.png}
+
+%\end{center}
+%\end{frame}
+%}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{Análisis de diversidad y estadísticos }
+\framesubtitle{Estimadores y abundancia}
+\begin{center}
+\includegraphics[scale=0.45]{imagenes/interprue.png}
+\end{center}
+
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{ }
+\begin{center}
+\includegraphics[scale=0.45]{imagenes/rankprue.png}
+\end{center}
+
+\end{frame}
+}
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{ }
+%\begin{center}
+%\includegraphics[scale=0.45]{imagenes/corprue.png}
+%\end{center}
+
+%\end{frame}
+%}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{Diversidad $\alpha$ }
+\begin{center}
+\includegraphics[scale=0.45]{imagenes/intereje.png}
+\end{center}
+
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{}
+\vspace{-1cm}
+
+\begin{center}
+\includegraphics[scale=0.3]{imagenes/ancovilla.png}
+\end{center}
+\begin{itemize}
+\normalsize{\item Diversidad~Tipo de hábitat + Área arbolada}
+\normalsize{\item Diversidad~Tipo de hábitat + Distancia rural}
+\normalsize{\item Crawley (2012)}
+
+\end{itemize}
+\end{frame}
+}
+
+
+
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{}
+%\vspace{-2.5cm}
+
+%\begin{center}
+%\includegraphics[height=5.5cm,width=11cm]{imagenes/ancoeje.png}
+%\end{center}
+%\begin{itemize}
+%\normalsize{\item q=1~Tipo de hábitat + Área arbolada}
+%\end{itemize}
+%\end{frame}
+%}
+
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{}
+%\vspace{-1.5cm}
+
+%\begin{center}
+%\includegraphics[height=5.5cm,width=11cm]{imagenes/ancoeje1.png}
+%\end{center}
+
+%\begin{itemize}
+%\normalsize{\item q=1~Tipo de hábitat + Distancia rural}
+%\normalsize{\item Crawley (2012)}
+
+%\end{itemize}
+%\end{frame}
+%}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{Similitud entre sitios}
+%\vspace{-1.5cm}
+
+\begin{center}
+\includegraphics[scale=0.5]{imagenes/indiceeje.png}
+\end{center}
+\vspace{-2cm}
+
+\begin {columns}
+\column{0.5\textwidth}
+\begin{itemize}
+\normalsize{\item <1> $\beta$sim-- Presencia/Ausencia}\\
+\normalsize{\item <2> Koleff (2005)}\\
+\end{itemize}
+\column{0.5\textwidth}
+\begin{itemize}
+
+\normalsize{\item  <3> perMANOVA\\
+Anderson (2001)}
+\normalsize{\item <4> Perfil de diversidad $\beta$\\
+Jost (2007)}
+
+\end{itemize}
+\end{columns}
+\end{frame}
+}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{Diversidad de gremios}
+\vspace{-0.5cm}
+
+\begin{center}
+\includegraphics[scale=0.5]{imagenes/gremioeje.png}
+\end{center}
+\vspace{-1cm}
+
+\begin{itemize}
+\pause
+\normalsize{\item Tabla de contingencia (Zar 2010)}
+\pause
+\normalsize{\item Modelos nulos (Morrone 2001)}
+\pause
+\normalsize{\item 1000 remuestreos}
+
+\end{itemize}
+\end{frame}
+}
+
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{Análisis de diversidad}
+%\tikzstyle{every node}=[draw=black,thick,anchor=west]
+%\tikzstyle{selected}=[draw=red,fill=red!30]
+%\tikzstyle{optional}=[dashed]
+%\onslide<1>{\begin{tikzpicture}[%path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+  %\onslide<1>{\node(a){Estimadores y abundancia}};
+  %\onslide<2>{\node(b) [below=1cm of a]{Intrapolación/extrapolación (Chao 2012)}};
+  %\onslide<1>{\node(c) [below=1cm of b]{Estimadores y abundancia}};
+ %grow via three points={one child at (0.5,-0.7) and
+  %two children at (0.5,-0.7) and (0.5,-1.4)},
+  %edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+  %\node {Estimadores y abundancia}
+   % child { node {Intrapolación/extrapolación (Chao 2012)}}		
+    %child { node {Cobertura de la muestra (Colwell et al 2014)}}
+    %child { node {Rango abundancia log 10 (Magurran 2004)	}};
+
+%\end{tikzpicture}}
+%\onslide<2>{\begin{tikzpicture}[%
+ % {one child at (0.5,-0.7) and
+  %two children at (0.5,-0.7) and (0.5,-1.4)},
+  %edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+  %\node [optional] {Diversidad $\alpha$ }
+   % child { node [optional] {Intervalos de confianza al 84\% \\ (MacGregor-Fors y Payton 2013)}};
+%\end{tikzpicture}}
+%\end{frame}
+%}
+
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{}
+%\tikzstyle{every node}=[draw=black,thick,anchor=west]
+%\tikzstyle{selected}=[draw=blue]
+%\tikzstyle{optional}=[dashed]
+%\onslide<1>{\begin{tikzpicture}[
+ %grow via three points={one child at (1,-2) and
+  %two children at (1,-2) and (1,-3)},
+  %edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+  %\node [selected] {Similitud entre comunidades}
+   % child { node [selected] {Perfil de diversidad beta (Jost 2007)}}
+    %child { node [selected] {Índice $\beta$sim (Koleff 2005)}
+%child { node [selected]{Dendrogramas}}
+%child { node [selected]{Distancias máximas}}
+%};		
+%\end{tikzpicture}}
+
+%\end{frame}
+%}
+
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{}
+%\tikzstyle{every node}=[draw=black,thick,anchor=west]
+%\tikzstyle{selected}=[draw=blue]
+%\tikzstyle{optional}=[dashed]
+%\begin{tikzpicture}[%
+ % {one child at (-1,-2) and
+ % two children at (3,-6) and (-1,-7)},
+  %edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+  %\node [optional] {Diversidad de gremios }
+   % child { node [optional] {Dendrogramas distancias euclidianas}}
+    %child { node [optional] {Modelo nulo 1000 remuestreos}};
+%\end{tikzpicture}
+%\end{frame}
+%}
+
+%\begin{frame}
+ %   \begin{itemize}
+  %      \item<1> First
+   %     \item<2>Second
+    %    \item<3>Third
+    %\end{itemize}
+  %\end{frame}
+
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{Análisis estadísticos}
+%\vspace{-2cm}
+%\hspace{-1cm}
+%\begin{center}
+%\includegraphics[scale=0.22]{imagenes/diagramadiversi2.png}
+
+%\end{center}
+%\end{frame}
+%}
+
+
+
+\section{Resultados y discusión}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{Resultados y discusión}
+\begin{center}
+\includegraphics[scale=0.4]{imagenes/cuantos.png}
+
+\end{center}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{Otros estudios...}
+\vspace{-0.5cm}
+
+\begin{center}
+\hspace*{-1cm}\includegraphics[scale=0.25]{imagenes/mapa2pres.png}\\
+
+\end{center}
+
+\end{frame}
+}
+
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{}
+%\begin{center}
+%\includegraphics[scale=0.45]{imagenes/tipos.png}
+
+%\end{center}
+%\end{frame}
+%}
+
+
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{}
+%\begin{center}
+%\includegraphics[scale=0.45]{imagenes/tipos1.png}
+
+%\end{center}
+%\end{frame}
+%}
+
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{}
+%\vspace{-1cm}
+%\begin{center}
+%\hspace*{-0.9cm}\includegraphics[scale=0.5]{imagenes/familiaspres.png}
+%\end{center}
+
+%\end{frame}
+%}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{Abundancia}
+\begin{columns}[t]
+\column{.5\textwidth}
+\centering
+\includegraphics[scale=0.25]{imagenes/Internet/quiscalus.jpg}\\
+\caption{\normalsize{ Zanate (\textit{Quiscalus mexicanus}).}}\\
+\column{.5\textwidth}
+\centering
+\includegraphics[scale=2.3]{imagenes/Internet/passer.jpg}\\
+\caption{\normalsize{Gorrión doméstico (\textit{Passer domesticus}).}}
+\end{columns}\\[2cm]
+\tiny{Fotos tomadas de http://naturalista.conabio.gob.mx }
+
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{}
+\begin{columns}[t]
+\column{.5\textwidth}
+\centering
+\includegraphics[scale=1.1]{imagenes/Internet/paloma.jpg}\\
+\caption{\normalsize{ Paloma común (\textit{Columba livia}).}}\\
+\column{.5\textwidth}
+\centering
+\includegraphics[scale=0.9]{imagenes/Internet/carpodacus.jpg}\\
+\caption{\normalsize{ Gorrión mexicano (\textit{Haemorhous mexicanus}).}}
+\end{columns}\\[-2cm]
+\begin{center}
+\centering
+\includegraphics[scale=0.3]{imagenes/Internet/coquita2.jpg}\\
+\caption{\normalsize{Coquita (\textit{Columbina inca}).}}
+\end{center}
+\tiny{Fotos tomadas de http://naturalista.conabio.gob.mx }
+
+\end{frame}
+}
+
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{}
+%\vspace{-1.5cm}
+%\begin{center}
+%\centering
+%\includegraphics[scale=0.5]{imagenes/unidup.png}\\
+%\end{center}
+%\end{frame}
+%}
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{}
+%\vspace{-1.5cm}
+%\begin{columns}[t]
+%\column{.5\textwidth}
+%\begin{itemize}
+%\normalsize{\item Únicas}
+%\end{itemize}
+%\centering
+%\includegraphics[scale=0.2]{imagenes/Internet/cather.jpg}\\
+%\caption{\normalsize{ Chivirín barranqueño (\textit{Catherpes mexicanus}).}}\\
+%\includegraphics[scale=0.9]{imagenes/Internet/mnioti.jpg}\\
+%\caption{\normalsize{ Chipe trepador (\textit{Mniotilta varia}).}}\\
+%\column{.5\textwidth}
+%\begin{itemize}
+%\normalsize{\item Duplicados}
+%\end{itemize}
+%\centering
+%\includegraphics[scale=1.2]{imagenes/Internet/sayo.jpg}\\
+%\caption{\normalsize{ Mosquerito negro (\textit{Sayornis nigricans}).}}\\
+%\includegraphics[scale=0.2]{imagenes/Internet/geo.jpg}\\
+%\caption{\normalsize{ Máscarita común (\textit{Geothlypis trichas}).}}\\
+
+%\end{columns}\\[-2cm]
+%\tiny{Fotos tomadas de http://naturalista.conabio.gob.mx }
+
+%\end{frame}
+%}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{Ecología urbana}
+\vspace{-0.5cm}
+
+\begin{center}
+\hspace*{-1cm}\includegraphics[scale=0.25]{imagenes/fischer.png}\\
+
+\end{center}
+
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{Ecología urbana}
+\vspace{-0.5cm}
+
+\begin{center}
+\hspace*{-1cm}\includegraphics[scale=0.25]{imagenes/fischer1.png}\\
+
+\end{center}
+
+\end{frame}
+}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{}
+\begin{itemize}
+\normalsize{ \item  NOM-059-2010  categoría de \textbf{protección especial}.}
+\end{itemize}
+\begin{columns}[t]
+\column{.5\textwidth}
+\centering
+\includegraphics[scale=0.5]{imagenes/Internet/xenotriccus1.jpg}\\
+\caption{\tiny{ Mosquero del Balsas (\textit{Xenotriccus mexicanus}).}}\\
+\column{.5\textwidth}
+\centering
+\includegraphics[scale=1.1]{imagenes/Internet/Myadestes.jpg}\\
+\caption{\tiny{ Clarín jilguero (\textit{Myadestes occidentalis}).}}
+\end{columns}\\[2cm]
+\tiny{Fotos tomadas de http://naturalista.conabio.gob.mx }
+
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{}
+\begin{columns}[t]
+\column{.5\textwidth}
+\centering
+\includegraphics[scale=0.4]{imagenes/Internet/cooperii.jpg}\\
+\caption{\tiny{ Halcón de Cooper* (\textit{Accipiter cooperii})}}\\
+\column{.5\textwidth}
+\centering
+\includegraphics[scale=0.6]{imagenes/Internet/striatus.jpg}\\
+\caption{\tiny{ Gavilan de pecho rufo (\textit{Accipites striatus}).}}
+\end{columns}\\[2cm]
+\tiny{Fotos tomadas de http://naturalista.conabio.gob.mx y http://avesmx.conabio.gob.mx*}
+
+\end{frame}
+}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{Áreas verdes y grises}
+\vspace{-1cm}
+\begin{center}
+\hspace*{-0.9cm}\includegraphics[scale=0.55]{imagenes/sitiospres.png}\\
+\end{center}
+\end{frame}
+}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{}
+\vspace{-1.8cm}
+\begin{center}
+\hspace*{-1.2cm}\includegraphics[scale=0.43]{imagenes/rangopres2.png}\\
+\end{center}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{}
+\vspace{-1cm}
+\begin{center}
+\includegraphics[scale=0.43]{imagenes/corpre.png}\\
+\end{center}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{}
+\begin{center}
+\includegraphics[scale=0.42]{imagenes/estimapres.png}\\
+\end{center}
+\vspace{-0.5cm}
+{\tiny
+\begin{longtable}[c] {lllllr} 
+\caption{} \\
+Sitio &CM & R obs  & R est & U & D   \\ \midrule
+Total  & 99\% & 77 & 98 & 13 & 4 \\
+Áreas verdes  & 99\% & 74 & 85.99 & 12 & 6 \\
+Áreas grises  & 99\% & 40 & 63.997 & 12 & 3 \\ \bottomrule
+\end{longtable}
+}\\[5cm]
+
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{Diversidad $\alpha$}
+\begin{center}
+{\tiny
+\begin{longtable}[c] {lllllr} 
+\caption[]{} \\
+ Término & gl & SC & CM & F & \textit{P} \\ \midrule
+Área arbolada (A) &1& 179.696 & 179.696 & 38.02 & <<0.0001 \\
+Sitios(S) & 1 & 1.001  & 1.001 & 0.211 & 0.652 \\
+AxS &1& 0.029 & 0.029 & 0.006 & 0.938 \\ 
+Error &14& 66.163 & 4.726  \\
+Total &17& 246.86 & 14.523 \\ \bottomrule 
+\end{longtable}
+}
+\end{center}\\
+\begin{center}
+{\tiny
+\begin{longtable}[c] {lllllr} 
+\caption[]{} \\
+ Término &gl& SC & CM & F & \textit{P} \\ \midrule
+Distancia (D) &1& 7.966 & 7.966 & 1.8868 & 0.1912  \\
+Sitios(S)  &1& 179.696 & 179.696 &42.5628& <<0.0001 \\
+DxS &1& 0.121 & 0.121 & 0.0287 & 0.867  \\ 
+Error & 14 & 59.107 & 4.222 \\
+Total &17& 246.86 & 14.523  \\ \bottomrule 
+\end{longtable}
+} 
+\end{center}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{}
+\begin{center}
+\includegraphics[scale=0.6]{imagenes/raref84pres.png}\\
+\end{center}
+
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{Similitud entre comunidades}
+\vspace{-0.8cm}
+\begin{center}
+\includegraphics[scale=0.55]{imagenes/betapsimpres.png}\\
+\end{center}
+
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{}
+\begin{center}
+\includegraphics[scale=0.5]{imagenes/betacsimpres.png}\\
+\end{center}
+
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{}
+\begin{itemize}
+\normalsize{\item perMANOVA  (\textit{P}=0.01, R=0.226).}
+\end{itemize}
+\begin{center}
+{\small
+\begin{longtable}[c] {ccccccc} 
+\caption[]{} \\
+Término & gl & SC & CM & F & R & \textit{P}   \\ \midrule
+Habitat & 17 & 34.248 & 2.014 & 13.428 & {\color{red} 22.6\%} & 0.01 \\
+Visitas & 3 & 9.790 & 3.263 & 21.751 & {\color{red} 6.4\%} & 0.01 \\
+Residuales & 717 & 107.268 & 0.15 &  &{\color{red} 70.8\%} &  \\ 
+Total & 735 & 151.305 & & & 1 & \\ \bottomrule
+
+\end{longtable}
+}
+\end{center}
+
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{}
+\begin{center}
+\includegraphics[scale=0.7]{imagenes/perfilib1.png}\\
+\end{center}
+\end{frame}
+}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{Diversidad de gremios}
+
+\begin{center}
+\hspace*{-0.5cm}\includegraphics[scale=0.5]{imagenes/grems.png}\\
+\end{center}
+
+\begin{center}
+\begin{itemize}
+\centering
+\normalsize{\item $\chi^{2}$=2.697,gl=4,\textit{P}=0.61}
+\end{itemize}
+\end{center}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{}
+\vspace{-1.5cm}
+\begin{center}
+\hspace*{-2cm}\includegraphics[scale=0.35]{imagenes/gremiosprese.png}\\
+\end{center}
+\end{frame}
+}
+
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+%\begin{frame}
+%\frametitle{}
+%\begin{itemize}
+%\tiny{\item Sin embargo el número de especies insectívoras disminuye en las áreas grises.}
+%\end{itemize}
+%\vspace{-0cm}
+%\begin{center}
+%\includegraphics[scale=0.45]{imagenes/Figura14.png}\\
+%\end{center}
+%\end{frame}
+%}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{}
+\vspace{-0cm}
+\begin{center}
+\includegraphics[scale=0.3]{imagenes/nulpar.png}\\
+\end{center}
+\end{frame}
+}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{}
+\begin{center}
+\includegraphics[scale=0.3]{imagenes/nulcal.png}\\
+\end{center}
+\end{frame}
+}
+
+
+
+\section{Conclusiones}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres11.png}}
+\begin{frame}
+\frametitle{Conclusiones}
+\vspace{-1cm}
+\begin{enumerate}
+\normalsize{\item  Las áreas verdes son más diversas que las áreas grises en la ciudad de Puebla.
+Sin embargo, las áreas grises de la ciudad de Puebla, presentan un número importante de especies de aves que resulta mayor que otras regiones del país.}\\[1cm]
+\pause
+\normalsize{\item El análisis de gremios muestra estructuras diferentes para las áreas verdes y las áreas grises, donde el número de especies de aves insectívoras decrece en las áreas grises a comparación de las áreas verdes.}\\[1cm]
+\pause
+\normalsize{\item El análisis de  diversidad beta para áreas verdes y grises indica  que existe una sola comunidad de aves.}
+\end{enumerate}
+
+\end{frame}
+}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres10.png}}
+
+\begin{frame}
+\frametitle{}
+\Huge{ Quisiera agradecer a......}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/dibujpres10.png}}
+
+\begin{frame}
+\frametitle{}
+\begin{itemize}
+\small{\item \textit{Mi familia}}
+\pause
+\small{\item \textit{Dr Juan Héctor García Chávez}}\\
+\pause
+\small{\item \textit{M en C Ana Lucia Castillo Meza}}\\
+\pause
+\small{\item \textit{A mis sinodales Dr Antonio Fernández Crispín\\
+Dr Federico Escobar Sarria\\
+Dr Ian MacGregor-Fors}}
+\pause
+\small{\item \textit{Gabriela Angulo Ordoñes}}\\
+\pause
+\small{\item \textit{A mis amigos}}\\
+
+
+\end{itemize}
+
+\end{frame}
+}
+{
+\setbeamertemplate{headline}{}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/disenin2.png}}
+
+\begin{frame}
+\frametitle{}
+%\begin{figure}[ht]
+ %  \movie[width=9.1cm,height=6.5cm,showcontrols=true,loop,poster,text={\small(Loading Video...)}]{}{imagenes/Internet/COol gif.avi}
+%\end{figure}
+%\includemovie[poster,autoplay,externalviewer, text={\small(Loading bloch.mp4)}]{6cm}{6cm}{imagenes/Internet/COol gif.mp4}
+
+%\movie[width=3cm,height=2cm,poster]{}{imagenes/Internet/COol gif.gif}%como lo sugiere la guía
+%\includemovie{3cm}{2cm}{imagenes/Internet/COol gif.gif}
+%\movie{\pgfuseimage{myposterimage}}{imagenes/Internet/COol gif.avi}
+%\movie[autostart]{}{imagenes/Internet/COol gif.mp4}
+\end{frame}
+}
+}
+
+\end{document}
+

@@ -1,0 +1,1298 @@
+\documentclass[letterpaper,12pt]{article}
+%\documentclass[a4paper,12pt]{article}
+\usepackage[total={18cm,23cm}, top=1.5cm, left=1.5cm] {geometry}
+%\usepackage[total={18cm,23cm},heightrounded,marginparwidth = 4cm,marginparsep = 0.5cm,outer = 6cm, top=1.5cm, left=1.5cm] {geometry} % linea de código para las notas al márgen.	
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{marginnote}
+\usepackage[normalem]{ulem}
+\usepackage{longtable,multirow,booktabs,titling}
+\usepackage{titlesec,framed,appendix,lmodern}
+\usepackage{amsmath,amssymb,amsfonts,latexsym,cancel}
+\usepackage{epigraph}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage[hidelinks]{hyperref} 
+\usepackage[small,bf,labelsep=period]{caption}
+\usepackage{floatrow}
+\usepackage{float}
+\usepackage{hieroglf}
+%\usepackage{bm}
+\usepackage{afterpage}
+\usepackage[titles]{tocloft}
+\usepackage{makeidx}
+\usepackage{hyperref}
+\usepackage{listings}
+\lstset{
+basicstyle=\small\ttfamily,
+columns=flexible,
+breaklines=true
+}
+\setcounter{secnumdepth}{0} 
+\setcounter{tocdepth}{3} 
+\fontsize{14}{2}
+\pagestyle{fancy}
+\fancyfoot[L]{\includegraphics[width=5mm]{imagenes/avesilla.png}}
+\fancyfoot[R]{\includegraphics[width=5mm]{imagenes/siluetacolibri.png}}
+
+\renewcommand{\baselinestretch}{2}
+\renewcommand{\listtablename}{Tabla}
+\renewcommand\thefigure{\arabic{figure}}
+\renewcommand{\figurename}{Figura}
+% la buena apertura
+\begin{titlepage}
+ \begin{minipage}{0.2\textwidth}
+ \centering
+ \includegraphics[width= \textwidth]{imagenes/escudob.png}
+ \rule{0.1cm}{18cm}
+ \rule{0.2cm}{18cm}
+ \includegraphics[width= \textwidth]{imagenes/escudobi.png} 
+ \end{minipage}
+ \hfill
+\begin{minipage} {0.79\textwidth} 
+\centering
+\large BENEMÉRITA UNIVERSIDAD AUTÓNOMA DE PUEBLA\\
+\rule{\textwidth}{2pt} \\ [1cm] 
+\Large Escuela de Biología \\[1cm]
+\Large Importancia de las áreas verdes de la ciudad de Puebla para la avifauna\\[1cm]
+\large Tesis que para obtener el titulo de \\
+\Large Licenciatura en biología \\[1cm]
+\large Presenta \\
+\Large Fernando Dorantes Nieto \\[1cm]
+\large Director de tesis \\
+\Large Dr Juan Héctor García Chávez \\[1cm]
+\small Diciembre del 2015 \\
+\end{minipage}
+\end{titlepage}
+
+{\linespread{1}
+\title{
+\centering
+\Large Benemérita Universidad Autónoma de Puebla\\[1cm]
+\Large Escuela de Biología\\[1cm]
+\Large Importancia de las áreas verdes de la ciudad de Puebla para la avifauna\\[5cm]
+}
+}
+\date{}
+\pagebreak
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+\pagenumbering{arabic}
+\renewcommand
+%\clearpage
+%\include{extras/dedicatoria.tex}
+%\clearpage
+%\vspace*{0.2\textheight}
+
+\newpage
+\section*{}
+{\noindent\endquote\ Dedicatoria \\ \itshape A mi mamá Raquel Nieto Ovando \\[2cm]
+A mis hermanos María de los Ángeles Dorantes Nieto\\
+Francisco Eduardo Dorantes Nieto \\
+Leobardo Dorantes Nieto\\[2 cm]
+A Gabriela Guadalupe Angulo Ordoñes, por ser mi inspiración a la mejora constante...\\ [5cm]
+A ti estimado lector\bigbreak}
+
+\newpage
+\section*{Agradecimientos}
+Esta sección es complicada puesto que hay tantas personas a quien agradecer y en tan poco espacio...\\
+Para comenzar, quisiera agradecer a mi familia, empezando con mi mamá Raquel Nieto Ovando, muchas gracias por todo el apoyo que me has ofrecido a lo largo de toda mi vida, también quisiera agradecer a mis hermanos: muchas gracias a ti María de los Ángeles Dorantes Nieto primero por ayudarme en muchos momentos de mi vida, por haberme mostrado que la ciencia es divertida. Muchas gracias a ti Francisco Eduardo Dorantes Nieto porque en estos años de carrera, nunca me has dejado solo, además a lo largo de mi vida me has apoyado en muchos aspectos. Muchas gracias a ti Leobardo Dorantes Nieto por preocuparte por mi y apoyarme en toda la carrera, en toda mi vida, en ustedes hermanos he encontrado mucha fortaleza para poder seguir adelante. Por eso, este éxito no es solo mío sino también de ustedes.\\
+Quisiera agradecer también a Gabriela Guadalupe Angulo Ordoñes, primero por soportarme en todos estos años de carrera. Gracias por su apoyo, su cariño, sus regaños y su compañía. Muchos de los mejores momentos de mi vida han sido por ti. Gracias.\\
+Quisiera agradecer a mis amigos de la carrera, Erick Joaquín Corro Méndez, Jhosse Paul Márquez Ruíz, Julio Valerdi, Omar Iturbe, Juan Morales Trejo, Elsa Morales....etc. A mis amigos del laboratorio de Ecología de Poblaciones, Pedro Luna, Karla Selene, Irais Hipatia, Álvaro Ilhuicamina, Esmeralda Nava. \\
+También quisiera agradecer al Dr Juan Héctor García Chávez por haberme aceptado como tesista, por soportar mis necedades, por ayudarme en hacer una tesis con un tema que me gusta mucho, por ayudarme en muchos aspectos no solo de la carrera sino aspectos personales. Gracias.\\
+Agradezco a la M en C Ana Lucía Castillo Meza por ser una persona muy paciente conmigo, por sus consejos, por apoyarme en varios proyectos de la carrera, por tener una sonrisa para todos los del laboratorio aún en días muy estresantes.\\
+Agradezco a mis sinodales, al Dr Antonio Fernández Crispín, al Dr Federico Escobar Sarria y al Dr Ian MacGregor-Fors por sus valiosos comentarios y sugerencias  para mejorar esta tesis.
+Por último agradezco a la escuela de Biología de la BUAP por apoyarme con una beca para poder continuar con esta tesis.
+Por esto. \\
+\begin{center}
+¡Gracias a todos!.  
+\end{center}
+
+%para los índices
+%manera1
+%\tableofcontents
+%\cleardoublepage
+%\addcontentsline{toc}{section}{Índice general} % para que aparezca en el indice de contenidos
+%\listofsections % indice de Secciones
+%\addcontentsline{toc}{section}{Lista de figuras} % para que aparezca en el indice de contenidos
+%\listoffigures % indice de figuras
+%\cleardoublepage
+%\addcontentsline{toc}{section}{Lista de tablas} % para que aparezca en el indice de contenidos
+%\listoftables % indice de tablas
+
+\newpage
+\tableofcontents
+\newpage
+\phantomsection
+%\providecommand\phantomsection{}
+\addcontentsline{toc}{section}{\listfigurename}
+\listoffigures
+\newpage
+%\providecommand\phantomsection{}
+\phantomsection
+\addcontentsline{toc}{section}{\listtablename}
+\listoftables
+
+
+
+\newpage
+\begin{abstract}
+%\addcontentsline{abstract}{Resumen}
+La urbanización es un proceso que trae como consecuencia cambios drásticos en la estructura de los ecosistemas, los cuales conllevan a la disminución de la biodiversidad, en comparación con los sistemas naturales. Sin embargo, los  ecosistemas urbanos no son completamente hostiles, pues, por un lado, ofrecen recursos y condiciones favorables para las especies que los habitan y por otro, presentan mosaicos de paisajes relativamente heterogéneos, algunos de los cuales como las áreas verdes, pueden servir como refugio para los organismos. Las aves son ideales para el estudio de la biodiversidad en las ciudades puesto que son indicadores del estado de la riqueza de especies en una ciudad. En varias regiones del país, se han realizado varios estudios en áreas verdes, determinando y comparando el número de especies de aves presentes en las áreas verdes, sin embargo, estos estudios solo se enfocan en dichas áreas verdes, ignorando la diversidad del resto de la ciudad. Con mi trabajo evalué la abundancia y la riqueza de especies en las áreas verdes y grises (calles) de la ciudad de Puebla. Realicé un muestreo de enero a junio de 2014, para tener el registro de las aves migratorias (invierno) y residentes (verano). Conté y determiné a nivel especie  a todas las aves vistas. Esto lo hice en nueve áreas verdes y en las áreas grises adyacentes en cada uno de ellos, para comparar ambos tipos de habitats. Registré 77 especies de aves. En  las áreas verdes fueron 74  y en las áreas grises 40. Los estimadores indican un esperado de 98, 86 y 64 especies para el total, las áreas verdes y las áreas grises respectivamente, todos con una completitud del 99\%. Encontré cinco especies muy abundantes: \textit{Quiscalus mexicanus}, \textit{Passer domesticus}, \textit{Columba livia}, \textit{Haemorrhous mexicanus} y  \textit{Columbina inca}. Las comparaciones en la riqueza de especies con intervalos de confianza al 84\% indican que si hay diferencias entre las áreas verdes y grises, siendo las primeras más diversas que las segundas,  de acuerdo al  índice de $\beta$sim, las áreas grises son sitios más homogéneos que las áreas verdes, por otro lado el perfil de diversidad beta indica que existe una sola comunidad de aves para la ciudad de Puebla. Las aves presentes se clasificaron en cinco gremios alimenticios, que de acuerdo a su abundancia son: omnívoros, granívoros, insectívoros, nectarívoros y carnívoros. El gremio de los frugívoros estrictos está ausente. Comparativamente con otras ciudades como Pachuca, Morelia y Querétaro, la ciudad de Puebla presenta un mayor número de especies, lo cual puede deberse a su posición biogeográfica o a lo intensivo del muestreo. Por otro lado, se recomienda preservar las áreas verdes para poder conservar la avifauna presente en esta ciudad.\\
+%\textcolor{red}{No estoy muy de acuerdo con esta afirmación, pues no encuentro sustento para ello. Dime una cosa, ¿Qué areas verdes han disminuido? Mas bien creo que han aumentado en número. Tu trabajste en dos áreas verdes nuevas, ¿cierto? ¿Esto lo desarrollas en la discusión? Al menos estp creo que no debería ir en el resumen.}
+\end{abstract}\\[3cm]
+
+\newpage
+{\linespread{1}
+\epigraph{``En la oscuridad de una mañana en 1667, por decir, durante una tormenta, ella se refugio bajo una fría cornisa de piedra.... reposó su cabeza en su cuerpo, esponjó sus plumas para calentarse...
+Esperó. No lo sabía, nadie lo sabía, pero era el último dodo en la Tierra.
+Cuando la tormenta pasó, nunca volvió a abrir sus ojos. Esto es extinción''}{David Quammen,1996}\\}
+\section{Introducción}
+%\addcontentsline{toc}{section}{Introducción.}
+El crecimiento de las ciudades representa un grave problema ecológico que conlleva al cambio de uso de suelo y consecuentemente a la pérdida del hábitat, la contaminación en diversas formas, la introducción de especies exóticas y la disminución de la biodiversidad (McDonnell et al. 2009).
+
+El efecto de las actividades humanas se puede ver prácticamente en todos los hábitats, sin embargo en las grandes ciudades estos efectos son más profundos, donde su crecimiento es muy acelerado. Esto provoca que el 54\%  de la población mundial viva en las ciudades  y concretamente en Latinoamérica el 80\% de su población vive en ellas (ONU 2014).
+En México la situación no es muy distinta puesto que las zonas urbanas son de vital importancia para el desarrollo económico, científico y cultural del país, factores que determinan la migración a estos lugares. De las  377 ciudades, las que se localizan en el centro son las que concentran la mayor parte de la población. Tal es el caso de la Ciudad de México, Toluca, Puebla, Cuernavaca, Querétaro y Pachuca (Ortega-Álvarez et al. 2013).
+
+Debido a que las grandes ciudades se componen principalmente de grandes extensiones asfaltadas que son impermeables al agua, y a un gran número de construcciones, puede ser un ambiente hostil para la flora y fauna silvestres (Niemela et al. 2009). Esta hostilidad se relaciona principalmente con la disminución de la cobertura vegetal, que a su vez  influye en la disponibilidad de recursos (alimento y agua) y a las condiciones (temperatura, humedad y radiación solar), así como sitios de apareamiento y anidación (Jokimaki 1998). Por otro lado, las ciudades pueden convertirse en islas de calor, debido a que la irradiación de las superficies de concreto y asfalto es mayor que la del suelo y la vegetación, provocando que la temperatura del ambiente aumente (Niemela et al. 2009).
+
+Diversos estudios indican que el crecimiento de las ciudades promueve la disminución de la biota original, como producto de la urbanización y la introducción de especies exóticas, provocando que solo algunas especies puedan establecerse en el nuevo ecosistema (Olden et al. 2005). Esto puede explicarse por un proceso  denominado sinurbanización en el cual las especies se adaptan a las ciudades. Puesto que su expansión elimina algunas especies dejando libres varios nichos ecológicos (Luniak 2004). Estos nichos pueden ser ocupados por solo algunas especies que son capaces de  adaptarse a las condiciones citadinas provocando una  disminución de la diversidad en las ciudades (McKinney y Lockwood 1999).
+
+De acuerdo con Fischer y colaboradores (2015), las especies que habitan zonas urbanas pueden agruparse en tres categorías: las especies ''elusivas'' (\textit{Avoider}), las especies ''adaptables'' (\textit{Utilizer}) y las especies ''habitantes'' (\textit{Dwellers}). Las primeras corresponden a especies que evitan el ambiente urbano. Las segundas pueden usar los recursos que ofrecen las ciudades, pero necesitan de hábitats naturales para completar su ciclo biológico. Las especies habitantes son aquellas en las que sus poblaciones se ven favorecidas con el ambiente urbano, donde pueden llevar a cabo todo su ciclo biológico. Con esta noción acerca de los diferentes tipos de adaptación, se pueden ver los casos de pérdida de especies en relación al gradiente de urbanización (Fischer et al. 2015), esto puede explicarse de la siguiente manera: la persistencia de las especies ``habitantes'' no depende del grado de urbanización, sin embargo las especies ``adaptables'' si, por lo que la viabilidad de sus poblaciones son reflejo de la salud del ecosistema urbano.
+
+Debido a que la mayoría de los estudios ecológicos se realizan en ambientes naturales o ecosistemas poco perturbados, se ha generado una visión de que las ciudades son completamente hostiles para los organismos. Sin embargo e independientemente de lo anterior, las ciudades deben ser vistas como ambientes que contiene todos los atributos propios de un ecosistema (Niemela et al. 2009), por lo que es necesario visualizar estos ambientes con un enfoque menos catastrofista e incrementar el número de estudios sobre ecología urbana para tener una idea más clara de su funcionamiento a futuro.
+
+Las ciudades son ecosistemas que se caracterizan por ser lugares que presentan diversos grados de modificación, donde el cambio de uso de suelo genera  cambios abruptos (Niemela et al. 2009), es decir, las ciudades constituyen una matriz de concreto y asfalto alternada con áreas verdes de diferente tipo: parques, jardines, camellones, lotes baldíos, barrancas, cauces de ríos y arroyos que hacen de las ciudades ambientes  muy heterogéneos. Dichos lugares pueden ser sitios muy atractivos para cierto tipo de organismos (Ramírez-Albores 2008) por lo que pueden servir como refugio para diversas especies de diversos taxa (Carbo-Ramírez y Zuria 2011).
+
+Las áreas verdes son los hábitats mas parecidos a los sistemas que encontramos en zonas rurales en cuanto a la estructura de la vegetación. Es por ello que es interesante saber qué especies albergan estos sitios que pueden ser refugios para la fauna. Esta comparación se debe realizar en términos de riqueza y diversidad de especies. Al mismo tiempo, es necesario compararlos con otros sitios que tengan una gran proporción de superficies impermeables y vegetación escasa como las calles de las ciudades. Dicha comparación nos permitirá saber cuál de los tipos de ambientes son preferidos por las especies presentes y con esto tener una visión más integradora en términos de conservación de especies.
+
+Asimismo las zonas urbanas puede ser considerados, desde una perspectiva espacial, como islas ecológicas inmersas en matrices conformadas por diversos sistemas naturales. Al mismo tiempo, las áreas verdes son a su vez entidades aisladas dentro de las grandes áreas urbanas que se distinguen porque tienen cierta estructura vegetal (Malagamba-Rubio et al.  2013).
+
+Desde el estudio pionero de Pitelka en los años 40 sobre el comportamiento de las aves marinas (Marzluff 2011), los trabajos sobre ecología urbana han venido aumentando, sobre todo para  las aves, que usualmente son un grupo que sirven  como indicadores para conocer los efectos de la urbanización en las  características de la biodiversidad (Caballero et al. 2013). Estos estudios se han centrado en las regiones templadas del mundo. Sin embargo, en las regiones intertropicales los estudios sobre ecología urbana son escasos y esto supone un serio problema pues es en estas regiones donde la biodiversidad es mayor (Marzluff et al. 2011).
+
+Para  México, se tienen varios estudios sobre la diversidad y las comunidades de las aves en ambientes urbanos. En el campus de la facultad de estudios superiores Zaragoza-II de la Universidad Nacional Autónoma de México, en el Distrito Federal, se registraron 58 especies de aves, mostrando su importancia para la conservación (Ramirez 2008) . Carbo-Ramírez y Zuria  (2011) encontraron que las áreas verdes de  la ciudad de Pachuca sirven como refugio para las aves residentes y migratorias, mientras que González (2013)  encontró para la misma ciudad de Pachuca que las regiones suburbanas son más diversas que las zonas urbanas en general. Los estudios de ecología urbana con aves se han extendido a  varias zonas del país como el estado de  Guerrero (Castro-Torreblanca y Blanca 2014), Jalisco (MagGregor-Fors 2005) y el Estado de México (Valencia-Trejo et al. 2014).
+
+En la ciudad de Puebla Almazan-Nuñez e Hinterholzer-Rodriguez (2010) reportaron 46 especies de aves en el área verde Laguna de San Baltazar ubicada al sur de la ciudad de Puebla. Por otro lado González-Oreja y colaboradores (2007) reportaron 51 especies en  21 parques de las ciudades de Puebla y Cholula.
+
+Sin embargo en los trabajos antes mencionados, las investigaciones se han concentrado en el estudio de áreas verdes, principalmente parques urbanos. En ellos se concluye que este tipo de hábitats son sitios importantes para la conservación de las especies, incluyendo algunas especies que se encuentran en  alguna categoría de riesgo como el  \textit{Myadestes occidentalis} (Clarín Jilguero) (Almazan-Nuñez y Hinterholzer-Rodríguez 2010). No obstante con excepción de algunos  trabajos como el de Malagamba y colaboradores (2014), los demás trabajos han fallado al momento de afirmar que las áreas verdes son hábitats necesarios para la conservación de las aves, puesto que no se han comparado con otros tipos de hábitats presentes en las matrices urbanas, como es el caso de las calles, las cuales conforman un gran porcentaje de hábitat dentro de una ciudad y son frecuentadas por diversas especies de aves.
+
+Esta comparación es necesaria, puesto que si no se sabe que especies se encuentran en los distintos tipos de hábitat en la ciudad, no es posible saber la importancia relativa de dichos hábitats como sitios que pueden albergar especies silvestres. En otras palabras, en dado caso que una especie de ave se encuentre en las áreas verdes y en las áreas grises (calles) con la misma abundancia, entonces podemos suponer que las áreas verdes no son los únicos hábitats necesarios para la presencia de cualquier especie. Por otro lado también puede deberse a la proporción de especies habitantes y adaptables, de acuerdo a lo propuesto por Fischer y colaboradores (2015).
+
+
+Con base en lo anterior fue que desarrollé este trabajo, pues no sabemos qué especies de aves requieren realmente de las áreas verdes para sobrevivir en esta área urbana. Además de que es necesario un trabajo con un muestreo mejor estructurado, pues la información que existe para la ciudad de Puebla no está bien fundamentada metodológicamente.
+Adicionalmente la ciudad de Puebla es un sitio adecuado para investigar si las áreas verdes son importantes para la avifauna,  ya que esta ciudad tiene una amplia gama de áreas verdes que va desde parques pequeños y relativamente homogéneos en su vegetación como lo es el ``Paseo Bravo'' ubicado en el centro de la ciudad, hasta áreas verdes relativamente complejas como lo son la Ciudad Universitaria de la BUAP ubicado al sureste y el parque del Rio Atoyac ubicado al sur.
+
+Se espera que la riqueza y la estructura de la comunidad entre áreas grises y parques sea diferente, esto obedece a la naturaleza de los parques ya que estos tienen una estructura vegetal más compleja que  la zona urbana. Asimismo la disponibilidad de alimentos y agua puede que sea mayor en áreas verdes que en zonas urbanas (Carbo-Ramírez y Zuria 2011).
+La información generada podrá ser de importancia para la toma de decisiones, relacionada con la importancia de las  áreas verdes para la conservación de las aves en la ciudad de Puebla.
+
+Los objetivos que concebí para mi tesis son 1) Describir la comunidad de aves de la ciudad de Puebla. 2) Comparar la comunidad de aves de las áreas verdes con las áreas grises adyacentes a dichas áreas verdes, por medio de índices de diversidad $\alpha$ y $\beta$, así como la comparación de gremios de las áreas verdes y grises. 3) Determinar la importancia relativa de las áreas verdes como sitios  refugio para las aves.
+\newpage
+{\linespread{1}
+\epigraph{``Nuestros ojos están adaptados para mirar las cosas grandes, que no necesariamente son las más bellas. Observando detenidamente, muchas veces con el auxilio de lentes, descubriremos mundos maravillosos en tantas y tantas formas de vida. Ya lo dice el refrán latino: \textit{Natura maxima miranda in minimus}, es decir, la naturaleza se admira más en las cosas pequeñas''}{Miguel Álvarez del Toro}\\}
+
+\section{Material y método}
+%\addcontentsline{toc}{section}{Material y método.}
+
+\subsection{Área de estudio}
+%\addcontentsline{toc}{subsection}{Área de estudio.}
+
+La ciudad de Puebla es la capital del estado homónimo y se encuentra ubicada entre las coordenadas 
+(18^{\circ}$.05 y 19^{\circ}$.14 Norte; -98^{\circ}$.01 y -98^{\circ}$.18 Oeste). La ciudad de Puebla se encuentra a una altitud promedio  de 2160 m (INEGI 2012). Presenta un clima templado subhúmedo con lluvias en verano, con una  temperatura promedio anual de 17$^{\circ}$C. Presenta una precipitación promedio anual de 900 mm por año (INEGI 2009). La hidrografía de la zona está comprendida por la cuenca del rio Balsas, representada principalmente por el rio Atoyac, Actiopa, Alseseca y San Francisco que cruzan la ciudad de norte a sur. Presenta también cuerpos de agua artificiales como el caso los lagos de Chapulco, San Baltazar,  Ciudad Universitaria de la BUAP y los lagos del parque Ecológico de Puebla. El área de la ciudad de Puebla cubre aproximadamente 230 Km$^{2}$ (INEGI 2009). Se encuentra en la provincia del sistema volcánico transversal (INEGI 2009). La ciudad de Puebla es considerada la cuarta ciudad más importante del país con alrededor de 1,539,839 habitantes (INEGI 2010).
+La vegetación de la periferia de la ciudad está dominada por una mezcla de bosques de encino al oriente y el sur, el cuál se encuentra muy fragmentado (González et al. 2007), además de regiones agrícolas al occidente. En la región norte se encuentran bosques de pino (Mendoza et al. 2012).
+En los alrededores se encuentran las áreas naturales protegidas del Parque Nacional la Malinche (Norte), el Parque Nacional Izta-Popo (Occidente), el parque estatal Flor del Bosque (Oriente),el parque estatal humedal de Valsequillo y la reserva estatal sierra del Tentzo (Sur) (Mendoza et al. 2012). Para el estudio seleccioné nueve áreas verdes. Ubicadas en la zona central de la ciudad (Figura 1 y Cuadro 1).\\
+
+\begin{center}
+\begin{figure}[H]
+\includegraphics[width=18cm]{imagenes/Figura1.png}\\
+\caption[Ubicación de las nueve áreas verdes.]{Ubicación de las nueve áreas verdes estudiadas dentro de la ciudad de Puebla.\\
+Los mapas originales fueron tomados en el sitio web:Cartas topográficas de INEGI.  Posteriormente fueron modificados con QGIS (2014)}
+\end{figure}
+\end{center}
+
+\\
+\\
+%tabla de las áreas verdes
+\newpage
+{\footnotesize
+\begin{longtable}[c] {lcccc} 
+\caption[Ubicación de las nueve áreas verdes.]{Características de las áreas verdes de la ciudad de Puebla consideradas en este estudio. También se muestran los puntos de conteo en cada una de ellas} \\ \toprule
+Área verde & Abreviatura & Área (hectáreas) & Ubicación & Puntos de conteo \\ \midrule
+Parque Laguna de Chapulco & CHA & 18 & 18^{\circ} 59'$7$",  98^{\circ}13'$14$" & 6  \\
+Ciudad universitaria BUAP & CUB & 106 & 18^{\circ} 59'$59$", 98^{\circ}12'$01$" & 20 \\
+Los Fuertes & FUE & 104 & 19^{\circ}03'$22$", 98^{\circ}10'$59$" & 20 \\
+Panteón Municipal & PAM & 19 & 19^{\circ}02'$04$", 98^{\circ}13'$02$"  & 8 \\
+Parque del Arte & PAR & 8 & 19^{\circ}02'$07$", 98^{\circ}14'$30$"  & 5 \\
+Parque del rio Atoyac & PAT & 55 & 19^{\circ}01'$01$", 98^{\circ}14'$44$"  & 12 \\
+Parque Ecológico & PAE & 65 & 19^{\circ}01'$42$", 98^{\circ}11'$11$"  & 14 \\
+Parque Juárez & PAJ & 6 & 19^{\circ}01'$43$", 98^{\circ}12'$15$"  & 3 \\
+Parque Paseo Bravo & PAB & 5 & 19^{\circ}02'$48$", 98^{\circ}12'$27$"  & 3 \\ \bottomrule
+\end{longtable}
+}
+
+\subsection{Selección de sitios y diseño del muestreo}
+El muestreo corresponde a un diseño en bloques, cada uno formado por un área verde y una zona urbana adyacente de tamaño similar, la cual denominaré área gris. Cada una de estos sitios corresponden a las unidades de muestreo. Para poder establecer el área gris  procedí a  trazar un polígono de área y forma  similares a su correspondiente área verde. Este polígono se encontraba a una distancia mínima de 250 metros del área verde, para poder así conformar un bloque, las distancias entre área verde y gris fue establecida para asegurar en mayor medida la independencia de las sitios de estudio. \\
+Una vez que obtuve el área total para cada parque y la zona urbana correspondiente, procedí a medir el porcentaje de cobertura vegetal de cada uno de los bloques, así como las distancias en línea recta del bloque con respecto a la zona rural más cercana (campos de cultivo, pastizales inducidos y zonas de bosque periféricos a la ciudad de Puebla). Para esto emplee imágenes satelitales y las áreas y distancias las calculé por medio de  sistemas del información geográfica QGIS (2014).
+
+\subsection{Muestreos de aves}
+Las abundancias de cada especie de ave fueron obtenidas mediante el método de conteo por puntos, ubicados al azar en cada unidad de muestreo (Ralph et al. 1996). La cantidad  de puntos de muestreo en cada área verde fue establecida  teniendo en cuenta su tamaño. El criterio para esto fue que por cada cuatro hectáreas se establece un punto de conteo (Ralph 1996), el diseño de muestreo y la cantidad de puntos se puede ver en la Figura 2 y Cuadro 1. Cada punto de conteo estuvo separado a una distancia mínima de 200 metros para incrementar la independencia entre puntos de conteo. En cada punto observé y registré a todas las aves presentes hasta una distancia de 75 metros del punto de acuerdo a lo que recomiendan Ralph y colaboradores (1996), por un lapso de 10 minutos por cada punto, identificando a todas las especies y contando el número de individuos.
+
+Los muestreos los realicé en la temporada migratoria (enero-marzo) y la reproductiva (abril-junio) del año de 2014. Cada área verde y gris  las visité cuatro veces (dos veces por temporada). Los muestreos los comencé a partir de las 8:00 horas todos los días finalizando de acuerdo a la cantidad de puntos establecidos teniendo un máximo de 200 minutos de muestreo efectivo y un mínimo de 30. 
+La identificación de las especies la realicé con ayuda de  binoculares (7x50) y las guías de campo de Ber Van Perlo(2006), Howell y Webb(1995),
+Peterson(2010), Pineda et al. (2009) y Mendoza et al.(2012).
+Para la identificación  de los colibríes utilicé la guía de campo de Arizmendi y Berlanga (2014). Los nombres de las  especies fueron establecidos y actualizados gracias a los listados del American Ornithologist Union (AOU 2014) y de la International Ornithological Committee (IOC 2014).
+\begin{center}
+\begin{figure}[h!]
+\includegraphics[width=18cm]{imagenes/Figura2.png}\\
+\caption[Diseño del muestreo]{ Ejemplo de un bloque perteneciente al parque ecológico de la ciudad de Puebla.  
+Se puede observar el área verde y el área gris, así como el número de puntos de muestreo. \\ Los mapas originales fueron tomados en el sitio web:Cartas topográficas de INEGI.  Posteriormente fueron modificados con QGIS}
+\end{figure}
+\end{center}
+
+La estacionalidad de las especies la verifiqué con ayuda de las guías de campo de Howell y Webb(1995) y Ehrlich y colaboradores (1988). Los gremios alimenticios de las aves los establecí con base  a Ehrlich y colaboradores (1988). Cabe aclarar que en los muestreos tomé en cuenta sólo las aves terrestres, excluyendo a las acuáticas, pues los cuerpos de agua están sólo en algunas áreas verdes consideradas.
+\subsection{Análisis de diversidad}
+\subsubsection{\textit{Estimadores y abundancia}}
+Para determinar la completitud del muestreo (''\textit{completeness}'') realicé curvas de interpolación/extrapolación propuestas por Chao (2012). Para esto se utilicé el siguiente método: Curvas basadas en muestras o individuos para la estimación de la riqueza, basada en la abundancia de cada especie tomada al azar (Chao y Jost 2012), para estimar mediante la interpolación el número de especies en relación a la abundancia, posteriormente al llegar a un punto de referencia que es la riqueza observada, realicé una extrapolación a partir de este punto y dupliqué el número de individuos para poder así obtener una curva de estimación para las especies faltantes con el mismo esfuerzo de muestreo (Colwell et al. 2014); Por otro lado para confirmar estos resultados, realicé el cálculo de la cobertura de la muestra la cual relaciona el número de individuos necesarios para poder obtener una muestra suficiente (Colwell et al. 2014).\\
+Realicé curvas para cada zona (verde y gris) y también a nivel general, para poder estimar las especies faltantes en cada uno de ellos y comparar la riqueza de cada uno de los hábitats. Esta comparación fue simplemente visual y se expresa en las gráficas realizadas. Estos análisis los hice con el programa R (R core team 2015) en conjunto con los paquetes iNEXT (Chao 2014) y ggplot2 (Wickham 2009).
+
+Para comparar la estructura de las comunidades (áreas verde y gris) realicé curvas de rango-abundancia, calculando el logaritmo de la abundancia (Magurran 2004). Esto con el objetivo de poder observar con una mayor apreciación todas las especies presentes por hábitat. Estas gráficas las realicé con el programa R (R core team 2015) en conjunto con el paquete ggplot2 (Wickham 2009).\\
+
+\subsubsection{\textit{Diversidad $\alpha$}}
+
+Para poder comparar la riqueza entre ambos hábitats (áreas verdes y grises) realicé comparaciones de los intervalos de confianza al 84\% propuestas por MacGregor-Fors y Payton (2013), dicho análisis ha probado ser tan robusto como una prueba estadística con un valor de significancia, $\alpha$ = 0.05.
+Las comparaciones de este análisis son simplemente visuales con la premisa de que si los intervalos de confianza se sobrelapan entonces no hay diferencias entre los sitios que se están comparando.
+Los análisis los realicé con el programa Estimates 9 (Colwell 2013), las gráficas las realicé con el programa R (R core team 2015) en conjunto con el paquete ggplot2 (Wickham 2009).
+
+\subsubsection{\textit{Similitud entre comunidades}}
+Debido a que los sitios de muestreo fueron visitados varias veces, no es posible evitar la pseudorepetición espacial y temporal, por lo que no es posible  tomar en cuenta las abundancias para estimar similitud entre los sitios estudiados (Hurlbert 1984), es por ello que se tomaron en cuenta la presencia o ausencia de las especies para calcular la similitud de las comunidades de las áreas verdes y las áreas grises, el índice que utilicé para calcular la similitud entre los sitios fue el índice de similitud:
+\begin{center}
+$\displaystyle $\beta$sim= \dfrac{min(b,c)}{min(b,c)+a}$\\ [1cm]
+\end{center}
+Donde  $\beta$sim es el índice de similitud, el componente \textit{a} comprende el número total de especies encontradas en todos los sitios de muestreo (focales y vecinos), el componente  \textit{b} comprende el número de especies presentes en los sitios de muestreo vecinos y no en el focal y el componente \textit{c} comprende el número de especies encontradas en el sitio de muestreo focal pero no los vecinos. 
+Posteriormente dichas similitudes las representé mediante un gráfico de conglomerados. Para poder realizar dicho gráfico se utilizó el análisis de agrupación de las distancias máximas (\textit{Complete linkage method}) puesto que calcula la distancia mínima entre los elementos más alejados y llega a representar de una mejor manera las distancias entre los sitios de estudio (Kindth 2005). Este índice, de acuerdo con Koleff (2005) es el más adecuado para las matrices de incidencia.
+Dichos análisis los hice con el programa R (R core team 2015) en conjunto con los paquetes vegan (Oksanen 2015) y ggplot2 (Wickham 2009).
+
+Para determinar la diversidad $\beta$ y confirmar la presencia o ausencia de al menos dos comunidades de aves en la ciudad de Puebla, dadas por  las áreas verdes y las  áreas grises, se calculó la diversidad beta verdadera (Jost 2007). Dicha  diversidad $\beta$ fue expresada en tres formas basadas en los  órdenes llamados q=0, q=1 y q=2, los cuales serían modificaciones a los índices de Jaccard, Horn y Morisita-Horn respectivamente (Jost 2007).
+Estos índices se graficaron por medio de  perfiles de diversidad y gráficos de polígonos. Todos estos análisis los realicé con el programa R (R core team 2015)  en conjunto con el paquete entropart (Marcon y Herault 2013).
+
+\subsubsection{\textit{Diversidad de gremios}}
+Una manera complementaria de evaluar la diversidad es comparar la distribución de los gremios de una comunidad.Este enfoque permite analizar la estructura de las comunidades desde una perspectiva de nicho al que pertenecen los organismos y esto depende de la serie de características que se considere para el análisis. El gremio al cual pertenece cada especie de ave lo definí teniendo en cuenta su hábito o preferencia de alimentación: Carnívoros, Frugívoros, Granívoros, Insectívoros, Nectarívoros y Omnívoros. Para cada gremio se tuvo en cuenta la abundancia de los organismos en cada hábitat. El análisis de gremios lo realicé por medio de dendrogramas de las áreas verdes y grises por separado los cuales fueron construidos  mediante métodos multivariados utilizando las distancias euclidianas entre los brazos como un análisis filogenético. Por otro lado para saber si las comunidades de aves en áreas verdes y grises tenían alguna una estructura jerárquica definida por los gremios, se compararon con comunidades cuya estructura de gremios fuera aleatoria (Morrone 2001). Los dendrogramas los construí mediante 1000 remuestreos de la base de datos original, considerando los gremios y abundancias de cada especie, lo cual es un análogo de las permutaciones para construir árboles filogenéticos con distintos estados de carácter. Estos dendrogramas los realicé con el programa R (R core team 2015) en conjunto con el paquete cluster (Maechler et al. 2015) .  
+
+\subsection{Análisis estadísticos}
+Para saber si existió diferencia en la  diversidad verdadera entre las áreas verdes y grises, primero, calculé la diversidad verdadera expresada en el exponencial del índice de Shannon para calcular el número efectivo de especies (Jost 2006) para cada área verde y gris, cada uno de estos cálculos los consideré como la variable de respuesta. Debido a que esta variable presentó distribución de error normal, apliqué un modelo lineal mixto, considerando al sitio como factor aleatorio y al tipo de hábitad como factor fijo y, por un lado la cobertura del arbolado y, por otro, la distancia a la zona rural más cercana de cada sitio como covariables. Con base en lo anterior, apliqué dos análisis de covarianza (Crawley 2012): el primero con el tipo de hábitat como variable categórica y la cobertura de arbolado como covariable, el segundo tiene la misma estructura a excepción que la covariable fue la distancia a la zona rural más cercana.
+
+Para saber si la riqueza de las  áreas verdes y las áreas grises de cada sitio estaba asociada, apliqué un análisis de correlación de Spearman (Zar 2010).\\
+Debido a que los análisis de clasificación u ordenación dan una representación visual de los grupos de interés, al reducir las dimensiones de los datos (Anderson 2001), es necesario aplicar pruebas de hipótesis rigurosas que incluyan los efectos multivariados de los grupos formados \textit{a priori}. Es por ello que apliqué un análisis de varianza semi paramétrico multivariado (perMANOVA), con 100 permutaciones (Kindth 2005),la cual es una prueba de hipótesis multivariada no paramétrica para ver si hay diferencias en la abundancia relativa de diferentes organismos de diferentes especies entre las áreas verdes y las áreas grises. A diferencia de un MANOVA o análisis de varianza multivariado, el perMANOVA no requiere que los datos tengan una distribución de error normal, como el caso de las abundancias, las cuales son datos discretos y acotados a cero. Esta prueba puede aplicarse a modelos estadísticos que incluyen más de una variable independiente con varios niveles y esto incluye diseños anidados. Esta prueba de hipótesis es un análogo multivariado del cociente F de Fisher, calculado directamente de la matriz de similitud (Anderson 2001). Esta prueba la realicé con el programa R en combinación con el paquete vegan (Oksannen et al. 2015).\\
+Por último realicé una tabla de contingencia, para poner a prueba la hipótesis nula de que la riqueza de cada de gremio es independiente del tipo de hábitat (Áreas verdes y grises) (Zar 2010).
+
+\section{Resultados}
+\subsection{Diversidad y abundancia}
+Conté 16022 individuos (7124 en época migratoria y  8898 en época reproductiva) pertenecientes a 77 especies, agrupadas  en 25 familias y 8 órdenes (64 especies en época migratoria y 63 en época reproductiva). Del total de especies  49 fueron residentes, 24 migratorias y 4 introducidas (Anexo 1). Tyrannidae fue la familia  más rica  con 11 especies, seguida de Parulidae con nueve, Icteridae con ocho, Emberizidae con siete, Trochilidae con seis y Columbidae con cinco. El resto de las familias están representadas por 3 o menos especies (Figura 3). Las especies incluidas en la norma oficial mexicana NOM-059-2010 bajo la categoría de protección especial fueron: \textit{Myadestes occidentalis} (Clarín jilguero), \textit{Xenotriccus mexicanus} (Mosquero del Balsas), \textit{Accipiter cooperii} (Halcón de Cooper) y \textit{Accipiter striatus} (Gavilán de pecho rufo). Mientras que Ceballos y colaboradores (2000) consideran a \textit{Xenotriccus mexicanus} como especie amenazada.
+\begin{center}
+\begin{figure}[H]
+\includegraphics[scale=0.75]{imagenes/Figura3.png}\\
+\caption[Número de especies por familia.]{ Número de especies de aves por familia de la ciudad de Puebla, conjuntando los datos de áreas verdes y grises} 
+\end{figure}
+\end{center}
+
+El zanate (\textit{Quiscalus mexicanus}) fue la especie más abundante, seguida de el gorrión inglés o común (\textit{Passer domesticus}), la paloma común (\textit{Columba livia}), el gorrión mexicano (\textit{Haemorhous mexicanus}) y la coquita (\textit{Columbina inca}). Se encontraron 13 especies  con solo un registro  y cuatro con solo dos. En las áreas verdes el zanate fue  la especie más abundante, el segundo lugar lo ocupa el gorrión común, lo sigue el chipe coronado (\textit{Setophaga  coronata}), especie migratoria que ocupó el quinto lugar de las aves más abundantes. Para las áreas grises el gorrión común es la especie más abundante, seguida del zanate y de la paloma común (Figura 4).
+
+\begin{center}
+\begin{figure}[h!]
+\includegraphics[scale=0.9]{imagenes/Figura4.png}\\
+\caption[Curvas  de Rango-abundancia de los sitios de estudio.]{Curvas de Rango-abundancia en log 10 de  las aves de las  áreas verdes y grises de la ciudad de Puebla.}
+\end{figure}
+\end{center}\\[5cm]
+
+
+Del total de especies registradas 74 fueron encontradas en áreas verdes y 40 en las áreas grises (Anexo 2). Considerando solo las áreas verdes, Ciudad universitaria fue el sitio más rico con 46 especies, seguido del parque Los Fuertes y parque del Atoyac, ambas con 44 especies. El resto de las áreas verdes estudiadas tuvieron menos de 40 especies cada una (Figura 5).
+En las áreas grises la zona adyacente al parque Los Fuertes resultó ser la más rica con 29 especies, seguida  de la zona adyacente a Ciudad universitaria con 24 y la zona adyacente al parque del Atoyac con 18 (Figura 5). El índice de correlación entre la riqueza de las  áreas verdes y grises fue significativamente distinto de cero  (r=0.82 \textit{P} = 0.007, t = 3.826). 
+
+\begin{center}
+\begin{figure}[h!]
+\subfigure[]{\includegraphics[scale=0.7]{imagenes/Figura5.png}}\\
+\caption[Asociación de la riqueza de especies en las áreas verdes y grises]{Asociación de la riqueza de especies entre las áreas verdes y grises de la ciudad de Puebla México.}
+\end{figure}
+\end{center}\\[5cm]
+
+Los estimadores de cobertura de la muestra indican que se tiene el 99\% con un estimador de 98 especies (Figura 6). Para el caso de las áreas verdes y grises la cobertura de la muestra fue también del 99\%. Los estimadores para cada uno de estos dos hábitats indican un esperado  de 86 y 64 especies respectivamente (Figura 6 y Cuadro 2).
+
+{\footnotesize
+\begin{longtable}[c] {lcccccc} 
+\caption[Estimadores y cobertura de la muestra]{ Número de individuos por hábitat (N), la  cobertura de la muestra (CM), las especies observadas (Robs), las especies estimadas (Rest), número de especies con solo un registro por hábitat (U) y número de especies con dos registros (D) } \\
+Sitio & N &CM & R obs  & R est & U & D   \\ \midrule
+Total & 16022 & 0.9992 & 77 & 98 & 13 & 4 \\
+Áreas verdes & 8355 & 0.9986 & 74 & 85.99 & 12 & 6 \\
+Áreas grises & 7667 & 0.9984 & 40 & 63.997 & 12 & 3 \\ \bottomrule
+\end{longtable}
+}\\[5cm]
+
+\begin{center}
+\begin{figure}[H]
+%\end{figure} 
+\includegraphics[scale=0.8]{imagenes/Figura6.png}
+\caption[Curvas de interpolación/extrapolación.]{Curvas de interpolación-extrapolación basada en el número de  individuos para las áreas verdes, grises y agrupadas (General) de la ciudad de Puebla. Las líneas continuas representan la interpolación, las lineas combinadas con los círculos negros representan la extrapolación, las zonas sombreadas representan los intervalos de confianza al 95\%.}
+\end{figure} 
+\end{center}
+
+
+
+\subsection{Diversidad $\alpha$}
+El análisis de covarianza para evaluar si el área arbolada por sitio como covariable y el tipo de hábitat (áreas verdes y grises) influían sobre la diversidad verdadera, mostró que el porcentaje de área verde es importante para explicar la diversidad verdadera (Cuadro 3), puesto que la ordenada en el origen para las áreas verdes y grises es distinta de cero y distinta entre ellas (\textit{t}=2.591, gl=1, \textit{P}=0.021 y \textit{t}=3.785, gl=1, \textit{P}=0.002). Por otro lado las pendientes no son distintas a cero y no son diferentes entre ellas (\textit{T}=-0.007, gl=1, \textit{P}=0.938 y \textit{T}=0.003, gl=1, \textit{P}=0.997). Para el caso del análisis de covarianza  donde la variable de respuesta es la distancia de la zona rural más cercana como covariable muestran que dicha variable no es  importante para explicar las diferencias de la diversidad verdadera (Cuadro 4), la ordenada en el origen entre las áreas verdes y grises es distinta de cero y distinta entre ellas (\textit{T}=2.286, gl=1, \textit{P}=0.038 y \textit{T}=4.670, gl=1, \textit{P}=0.0003). Las pendientes no son distintas a cero y no son diferentes entre ellas (\textit{T}=0.169, gl=1, \textit{P}=0.867 y \textit{T}=-1.091, gl=1, \textit{P}=0.293) .
+
+{\footnotesize
+\begin{longtable}[c] {lllllr} 
+\caption[ANCOVA para la diversidad verdadera (q=1) en relación al sitio y área arbolada.]{Tabla de anova para el análisis de covarianza de la diversidad verdadera (q=1) en función al área arbolada disponible para cada sitio y en función del sitio, la interacción entre las variables de respuesta (AxS) se muestra en la tabla} \\
+ Término & gl & SC & CM & F & \textit{P} \\ \midrule
+Área arbolada (A) &1& 179.696 & 179.696 & 38.02 & <<0.0001 \\
+Sitios(S) & 1 & 1.001  & 1.001 & 0.211 & 0.652 \\
+AxS &1& 0.029 & 0.029 & 0.006 & 0.938 \\ 
+Error &14& 66.163 & 4.726  \\
+Total &17& 246.86 & 14.523 \\ \bottomrule 
+\end{longtable}
+}
+\pagebreak
+{\footnotesize
+\begin{longtable}[c] {lllllr} 
+\caption[ANCOVA para la diversidad verdadera (q=1) en relación al sitio y la distancia.]{Tabla de anova para el análisis de covarianza de la diversidad verdadera  en función  de la  distancia de cada sitio a la zona rural más cercana y en función de los sitios (Área verde y gris), al mismo tiempo se muestra la interacción de las variables de respuesta (DxS)} \\
+ Término &gl& SC & CM & F & \textit{P} \\ \midrule
+Distancia (D) &1& 7.966 & 7.966 & 1.8868 & 0.1912  \\
+Sitios(S)  &1& 179.696 & 179.696 &42.5628& <<0.0001 \\
+DxS &1& 0.121 & 0.121 & 0.0287 & 0.867  \\ 
+Error & 14 & 59.107 & 4.222 \\
+Total &17& 246.86 & 14.523  \\ \bottomrule 
+\end{longtable}
+} \\[5cm]
+
+\newpage
+
+La riqueza entre áreas verdes ${(74\pm5)}$ y áreas grises ${(40\pm4.7)}$ mostró diferencias significativas con los intervalos de confianza al 84\%(Figura 7). Por otro lado se puede observar también que las áreas verdes son más diversas que las áreas grises. \\
+
+\begin{center}
+\begin{figure}[H]
+\includegraphics[width=18cm]{imagenes/Figura7.png}\\
+\caption[Riqueza e intervalos de confianza al 84\%]{Comparación de la riqueza entre las áreas verdes y grises, las lineas punteadas representan los intervalos de confianza al 84\%.}
+\end{figure}
+\end{center}
+
+\subsection{Similitud entre comunidades}
+Los valores de $\beta$sim se muestran de la matriz de similitud entre las áreas verdes (Cuadro 5), Ciudad Universitaria, el Parque Ecológico, el parque Laguna de Chapulco y los Fuertes mostraron ser similares, al mismo tiempo que áreas verdes como el Paseo Bravo y Parque del Arte fueron similares entre si, el Panteón municipal resultó ser el más diferente. Dichas relaciones pueden apreciarse en el gráfico de conglomerados (Figura 8).
+\begin{center}
+\begin{figure}[H]
+\includegraphics[width=18cm]{imagenes/Figura8.png}\\
+\caption[Dendrograma de las áreas verdes]{Dendrograma de las distintas áreas verdes estudiadas.}
+\end{figure}
+\end{center}
+\pagebreak
+{\footnotesize
+\begin{longtable}[c] {cccccccccc} 
+\caption[Índices de similitud entre áreas verdes]{Índices de similitud para las áreas verdes } \\
+Áreas verdes & CHA & CUB & FUE  & PAM & PAR & PAT & PAE & PAJ & PAB  \\ \midrule
+CHA & 1 & 0.852 & 0.735 & 0.676 & 0.74 & 0.823 & 0.727 & 0.727 & 0.9 \\
+CUB &  & 1 & 0.727 & 0.702 & 0.851 & 0.704 & 0.848 & 0.863 & 0.9 \\
+FUE &  &  & 1 & 0.696 & 0.814 & 0.704 & 0.818 & 0.909 & 0.85 \\ 
+PAM &  &  &  & 1 & 0.777 & 0.756 & 0.696 & 0.909 & 0.9 \\
+PAR &  & & & & 1 & 0.777 & 0.777 & 0.772 & 0.8 \\ 
+PAT & & & & & & 1 & 0.727 & 0.863 & 0.95 \\
+PAE & & & & & & & 1 & 0.818 & 0.85 \\
+PAJ & & & & & & & & 1 & 0.7 \\
+PAB & & & & & & & & & 1 \\ \bottomrule
+\end{longtable}
+}
+
+Con respecto a las áreas grises, las relaciones de similitud son muy parecidas entre estas, mostrando una homogeneidad mayor (A excepción de la zona adyacente al Paseo Bravo) en cuanto al número de especies presentes en las áreas grises que en las áreas verdes (Cuadro 6 y Figura 9)
+
+
+\begin{center}
+\begin{figure}[H]
+\includegraphics[width=18cm]{imagenes/Figura9.png}\\
+\caption[Dendrograma para las áreas grises]{Dendrograma representando las diferencias y similitudes entre las áreas grises}
+\end{figure}
+\end{center}
+\newpage
+{\footnotesize
+\begin{longtable}[c] {cccccccccc} 
+\caption[Índices de similitud para las áreas grises]{Índices de similitud para las áreas grises. } \\
+Áreas grises & CHA & CUB & FUE  & PAM & PAR & PAT & PAE & PAJ & PAB  \\ \midrule
+CHA & 1 & 1 & 0.941 & 0.705 & 0.933 & 0.882 & 0.882 & 0.857 & 1 \\
+CUB &  & 1 & 0.75 & 0.705 & 0.933 & 0.888 & 0.714 & 0.857 & 1 \\
+FUE &  &  & 1 & 0.941 & 1 & 1 & 0.761 & 0.928 & 1 \\ 
+PAM &  &  &  & 1 & 0.733 & 0.764 & 0.705 & 0.857 & 1 \\
+PAR &  & & & & 1 & 0.866 & 0.8 & 0.714 & 0.888 \\ 
+PAT & & & & & & 1 & 0.777 & 0.785 & 1 \\
+PAE & & & & & & & 1 & 0.785 & 1 \\
+PAJ & & & & & & & & 1 & 0.777\\
+PAB & & & & & & & & & 1 \\ \bottomrule
+\end{longtable}
+}
+
+Los valores del perMANOVA  muestran que hay diferencias significativas para las distancias mostradas para los gráficos de conglomerados (\textit{P}=0.01, R=0.226), (Cuadro 7). El perMANOVA muestra que los sitios explican el 22\% de las similitudes entre áreas verdes y grises, las visitas realizadas en cada sitio explican el 6\% de la variación, por otro lado existe un 70\% de variación que no puede explicarse con las variables que fueron medidas en el muestreo.
+{\footnotesize
+\begin{longtable}[c] {ccccccc} 
+\caption[Cuadro de perMANOVA]{Valores del perMANOVA con 100 permutaciones, mostrando los valores para la visitas y los sitios en estudio} \\
+Término & gl & SC & CM & F & R & \textit{P}   \\ \midrule
+Habitat & 17 & 34.248 & 2.014 & 13.428 & 0.226 & 0.01 \\
+Visitas & 3 & 9.790 & 3.263 & 21.751 & 0.064 & 0.01 \\
+Residuales & 717 & 107.268 & 0.15 &  & 0.708 &  \\ 
+Total & 735 & 151.305 & & & 1 & \\ \bottomrule
+
+\end{longtable}
+}
+
+Con respecto a la diversidad beta, los perfiles de diversidad muestran un valor de 1.3 para el nivel q0 de la diversidad beta verdadera. Esto puede explicarse por las especies raras encontradas en las áreas verdes. Sin embargo al analizar los valores de la diversidad beta para los niveles q1 y q2, se puede observar que la comunidad solo está expresada por valores muy cercanos a 1 (q0 y q1 =1.09), dando como resultado que áreas verdes y grises no son dos comunidades separadas (Figura 10).
+ 
+\begin{center}
+\begin{figure}[H]
+\includegraphics[scale=0.7]{imagenes/Figura12.png}\\
+\caption[Perfil de diversidad $\beta$]{Perfil de diversidad beta para los sitios de estudio, se puede observar que para el orden 1, se tienen 1.3 comunidades, sin embargo en órdenes de diversidad superiores disminuye a una debido a que deja de tomar en cuenta a las especies raras }
+\end{figure}
+\end{center}\\[5cm]
+\newpage
+\subsection{Diversidad de gremios}
+Encontré  cinco gremios alimenticios: Insectívoros (Insectívoros al vuelo y espulgadores), granívoros, omnívoros, nectarívoros y carnívoros. El gremio que está ausente es el de los frugívoros estrictos. El número especies de aves insectívoras y granívoras en las áreas verdes es más del doble del encontrado en las áreas grises;  el número de especies para  el resto de los gremios es muy parecido en ambos tipos de hábitat (Cuadro 8).\\
+El gremio con mayor abundancia de aves es el de los omnívoros, el cual está dominado por \textit{Quiscalus mexicanus} y \textit{Passer domesticus}, el siguiente gremio abundante es el de los granívoros, seguido de los insectívoros.\\
+La prueba de $\chi^{2}$ indica que los gremios no son independientes respecto al tipo de área \\ ($\chi^{2}$=2.697,gl=4,\textit{P}=0.61)
+{\footnotesize
+\begin{longtable}[c] {cccccc}
+\caption[Número de especies por gremios.]{Número de especies de los gremios de las aves de las áreas verdes y grises de la ciudad de Puebla, entre paréntesis están las abundancias por cada gremio} \\ \midrule
+Hábitat & Nectarívoros & Carnívoros & Insectívoros & Granívoros & Omnívoros \\ \midrule
+Áreas verdes & 6 (86) & 4 (12) & 45 (2383) & 13 (2802) & 6 (3068) \\
+Áreas grises & 5 (43) & 3 (3) & 19 (437) & 7 (3104) & 6 (4084) \\ \midrule
+%poner abundancias :(
+\end{longtable}
+}
+
+Los dendrogramas correspondientes a las áreas verdes y grises (Figuras 11 y 12) son similares entre si, mostrando las mismas relaciones de afinidad entre los gremios. En ambos tipos de hábitat los insectívoros son el grupo dominante y los carnívoros son el grupo que está representado por menos especies.
+
+Los dendrogramas esperados por el azar en la abundancia y los gremios, tanto para las áreas verdes como en las grises son diferentes a los dendrogramas con los datos de campo (Figura 13), lo que sugiere que la estructura de los gremios no es aleatoria y que por tanto hay algunos factores que determinan la estructura de los gremios en las áreas verdes y las áreas grises. 
+\begin{center}
+\begin{figure}[H]
+\includegraphics[scale=0.9]{imagenes/Figura13.png}\\
+\caption[Gremios de las áreas verdes]{Gremios encontrados en las áreas verdes  de la ciudad de Puebla. Se pueden observar las relaciones de las 74 especies encontradas. Se observa por cada especie o grupos de estas los gremios al que pertenecen}
+\end{figure}
+\end{center}
+
+
+
+\begin{center}
+\begin{figure}[H]
+\includegraphics[scale=0.95]{imagenes/Figura14.png}\\
+\caption[Gremios de las áreas grises]{Gremios encontrados en las áreas grises  de la ciudad de Puebla. Se pueden observar las relaciones de las 40 especies encontradas. Se observa por cada especie o grupos de estas los gremios al que pertenecen}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[H]
+\includegraphics[scale=0.8]{imagenes/Figura15.png}\\
+\caption[Comparación entre modelos nulos y gremios observados]{Dendrogramas comparativos de las áreas verdes (A) contra su modelo nulo (B), se muestra también el dendrograma de las áreas grises (C) en comparación con su modelo nulo (D) }
+\end{figure}
+\end{center}\\[5cm]
+\afterpage{\clearpage}
+
+
+
+\section{Discusión}
+Mis resultados muestran que las áreas verdes contienen un mayor número de especies que las áreas grises y por lo tanto, son sitios importantes para las aves. La literatura disponible menciona que las áreas verdes son importantes para la avifauna, sin embargo, algunas áreas grises aledañas  de la zona urbana pueden contener un número importante de aves. Malagamba y colaboradores (2014) compararon la avifauna de las áreas verdes con las áreas grises en la ciudad de Querétaro, encontrando en  las áreas verdes 37 especies, un número mayor que en las áreas grises donde encontraron 29 especies.
+
+El patrón encontrado en mis resultados es muy probable a que se deba que las áreas verdes ofrecen más recursos y refugio para contrarrestar los efectos de las  condiciones extremas y la depredación. Los recursos más importantes que podemos mencionar son el alimento, el agua, los sitios de anidación, refugio y descanso. Los refugios pueden estar en los árboles los cuales a su vez disminuyen los efectos de la contaminación acústica (Carbo-Ramírez y Zuria 2011).
+
+Sin embargo y más interesante aún es ¿Por qué hay ciertas especies de aves en las áreas grises?, las cuales también se encuentran en las áreas verdes. Esto me indica que en las áreas grises hay condiciones y recursos que las aves emplean para realizar sus actividades básicas. En las áreas grises de la ciudad de Puebla podemos encontrar arbolado tanto en banquetas como en camellones, los cuales pueden ser utilizados como sitios de alimentación, descanso y anidación. También los postes del cableado eléctrico y antenas son usados como sitio de descanso de varias especies de aves como la \textit{Columbina inca}, \textit{Columba livia}, \textit{Passer domesticus} entre otras (Observaciones personales; MacGregor-Fors y Schondube 2011). En el suelo de las áreas grises las aves también pueden encontrar alimento, el cual puede incluir invertebrados y semillas de la vegetación que se establezca en estos lugares, así como también desperdicios de origen antrópico. Es importante considerar que el interior de las viviendas puede ofrecer diversos recursos y condiciones para que las aves se establezcan, lo cual puede ser un factor importante para la avifauna y otros grupos taxonómicos de animales.
+
+El análisis de correlación muestra que la composición de especies está determinada por factores asociados al sitio de muestreo no considerados en mi trabajo, pues las áreas verdes con riqueza de especies altas, las áreas grises aledañas a esta también presentaban riqueza de especies altas y viceversa (Figura 5). Esto es relevante, pues muestra que la ciudad de Puebla es un sitio muy heterogéneo, con sitios relativamente ricos en especies (Los Fuertes y Ciudad Universitaria) y sitios pobres (Paseo Bravo y Juarez).
+
+Los estudios de la avifauna para la ciudad de Puebla muestran resultados distintos a los de mi trabajo. González y colaboradores (2007), encontraron 51 especies de aves en los parques de la ciudad de Puebla encontrando que las insectívoras son el grupo más abundante, lo mismo que encontré en mi trabajo. Asimismo en otro estudio realizado en veinte parques de la ciudad de Puebla, encontraron 52 especies (Buzo y Hernández 2004). Fuente Díaz-Ordaz (2003) reporta 40 especies para 13 parques localizados en la ciudad de Puebla. Las diferencias entre los resultados de los trabajos citados anteriormente y mi estudio pueden explicarse por el tipo de muestreo, la intensidad del mismo, así como el grado de experiencia del observador, ejemplo de ello radica en el trabajo realizado por Fuente Díaz-Ordaz (2003) quien toma en cuenta temporadas distintas (Verano), mientras que para mi trabajo consideré la temporada de invierno y la primavera.
+
+Estudios en otras ciudades de México similares a la ciudad de Puebla reportan un menor número de especies. En Pachuca se registraron 39 especies ( Carbo-Ramírez y Zuria 2011), pero el trabajo de González (2013) registró  59 especies sin embargo incluye además la zona periurbana de esta ciudad. Por otro en ciudades que se encuentran más al norte del país Malagamba y colaboradores (2014) encuentran un total de 40 especies en la ciudad de Querétaro, mientras que MacGregor-Fors y Schondube (2011), encuentran 45 especies para la ciudad de Morelia. Las diferencias en la riqueza entre estas ciudades y mi trabajo podría deberse a que estas ciudades están bien establecidas en la región Neártica y muy cercanas a esta, mientras que la ciudad de Puebla podría estar más influenciada por la región Neotropical, la cual es más diversa que la Neártica. 
+Las curvas de extrapolación-interpolación (Figura 6 y Cuadro 2) muestran que no falta mucho esfuerzo de muestreo para conocer todas las especies de esta comunidad, puesto que la cobertura de la muestra indica que se tiene un porcentaje cercano al 100\% de las especies de la ciudad de Puebla.
+
+Las comunidades de aves de las áreas verdes y las áreas grises están dominadas por unas cuantas especies de aves.
+Este patrón es más claro en las áreas grises (Figura 4), dominado por \textit{Passer domesticus} y \textit{Quiscalus mexicanus}, las cuales son las que dominan prácticamente en las zonas estudiadas en la ciudad de México (Carbo-Ramírez y Zuria 2011; Malagamba-Rubio et al. 2014; MacGregor-Fors y Schondube 2011). Algunas especies nativas, además de \textit{ Quiscalus mexicanus} son \textit{Columbina inca, Zenaida asiática} y \textit{Haemorrhous mexicanus} (segunda especie más abundante en las áreas verdes). Estas especies se han establecido exitosamente en la ciudad de Puebla en los últimos años.
+Una especie que vale la pena mencionar es el perico monje (\textit{Myiopsitta monachus}). Esta especie proviene de Sudamérica y fue introducida en México a partir de los ejemplares adquiridos como mascotas. 
+Su aparición en estado libre en la ciudad de Puebla no sobrepasa los 10 años y está asociada a la prohibición de la venta de loros nativos de México.
+Para todas estas especies, se ha observado que reaccionan de manera favorable a la urbanización, sobre todo \textit{Passer domesticus} la  cual fue la especie  más abundante en las áreas grises, esta especie es abundante en varias ciudades del país como el caso de Pachuca (Carbo-Ramírez y Zuria 2011;González 2013), Querétaro (Malagamba  2014) y Morelia (MagGregor-Fors y Schondude 2011).
+
+Asimismo en el continente europeo, sitio donde es originario el \textit{Passer domesticus}, y la \textit{Columba livia} se ha demostrado que es una especie muy adaptable a las condiciones urbanas, mostrando una mayor abundancia en las áreas más urbanizadas en varias regiones de Europa (Jokimaki y Suhonen 1998). 
+Este estudio también muestra que existe una correlación positiva entre la densidades altas de población humana y las  abundancias de palomas, corvidos y gorriones domésticos.
+
+Para el caso de \textit{Quiscalus mexicanus} Carbo-Ramírez y Zuria (2011) encontraron que es más abundante en áreas abiertas. En este estudio, los resultados difieren puesto que esta especie es la más abundante para todas las regiones estudiadas, ya sean parques o áreas grises. 
+La especie \textit{Haemorhous mexicanus}, así como otras especies como \textit{Zenaida asiatica} y \textit{Molothrus aeneus} fueron abundantes principalmente en los parques y esto concuerda con otro estudio que muestra que prefieren las zonas verdes con una vegetación predominante de árboles (Carbo-Ramírez y Zuria 2011). %cambiar cita
+
+Por otro lado, las proyecciones de crecimiento poblacional en  las ciudades indican que para el año 2020 el porcentaje de población urbana será del 86\% del total mundial. Por lo que la presión sobre los ecosistemas será mayor y los problemas ambientales aumentaran de manera considerable. Esto afectará sin lugar a dudas a la biodiversidad (ONU 2014). Como consecuencia, puede provocar que el número de casos de ciudades altamente dominadas por unas cuantas especies aumente.
+
+Concordando con la teoría de metapoblaciones, donde las poblaciones de muchas especies están relativamente
+aisladas pero de alguna manera pueden estar conectadas mediante corredores (Pianka 1994) podemos ver a las áreas verdes como pequeños parches para sustentar poblaciones de diversos organismos que pueden estar aisladas por las áreas grises y construcciones de las grandes ciudades, estas áreas pueden servir como corredores biológicos para las especies residentes y como sitios de descanso para aquellas que son migratorias, además de que son un punto de alimentación importante para ambas (Ramírez 2008).
+Esta visión se complementa con las ideas de Hansky y Gilpin (1997) y Leibold y colaboradores (2004) quienes proponen que una metapoblación es un grupo de poblaciones locales de una misma especie que están conectadas mediante la dispersión de los individuos de la especie, sin embargo, en este estudio existen diversas especies en los sitios de muestreo, por lo que es preciso hablar de metacomunidades las cuales son sitios que están unidos por una gran cantidad de especies que se están moviendo continuamente (Leibold et al. 2004). 
+Teniendo en cuenta lo anterior es importante conservar las áreas verdes para poder tener esos refugios disponibles para los demás seres vivos que habitan las ciudades. Sin embargo, de acuerdo con estimaciones realizadas por la organización mundial de la salud (2014). En las ciudades se requiere un mínimo de 10 a 15 metros cuadrados de área verde por habitante y las estimaciones de crecimiento indican que para  2050 la población urbana aumente al 66\% del total mundial. Por lo que las presiones ambientales serán mayores y se requerirá una mayor cobertura de áreas verdes.
+
+En la ciudad de Puebla, esto no se cumple puesto que estudios realizados por Gante y colaboradores (2010), revelan que se tienen 1.5 metros cuadrados por habitante. Si se tiene en cuenta que en 1990 la superficie era de 1.58 metros cuadrados  por habitante en veinte años se ha reducido a 1.5. 
+Aunado a que la extensión de los parques es mínima. Otro problema de la ciudad de Puebla reside en la distribución de las áreas verdes, donde el 86\% de las áreas verdes se encuentran en el oriente  (Gante et al.  2010) y el centro histórico del municipio (Morales-Garcia  2009).
+Estas condiciones podrían ser un factor por el cual la diversidad de las aves podría estar en riesgo, sobre todo si el tamaño de los parques sigue  disminuyendo.
+
+Se ha observado en ciudades de tamaño medio del país, como Xalapa situada en el estado de Veracruz que la preservación de diversas áreas verdes, así como el cuidado de las zonas limítrofes de la misma favorecen la conservación de las especies, puesto que en esta ciudad aún se pueden registrar 329 especies de aves, incluyendo varias especies en riesgo de extinción (Gonzalez-Garcia et al. 2014).
+
+Se ha demostrado que conservar las áreas verdes ayuda al mantenimiento de la provisión de servicios ecosistémicos, tal es el caso del amortiguamiento de ruido, la reducción de contaminantes atmosféricos y hábitat para la biodiversidad.
+Por otro lado, las ciudades presentan un fenomeno denominado las islas de calor, caracterizado por un clima más cálido que el ambiente rural circundante. Si el porcentaje de áreas verdes disminuye, este fenómeno puede incrementarse. (Pimienta-Barros et al.  2011).
+
+Asimismo es recomendable la conservación de la flora autóctona e introducida no invasiva  puesto que esto sirve de mucho para la alimentación y el establecimiento de la fauna nativa, ya que se ha observado en otros sitios del planeta que  los cambios en la estructura de las áreas verdes afecta en gran medida a las especies. Inclusive especies consideradas resistentes a la urbanización como el \textit{Passer domesticus} 
+han mostrado un serio descenso en sus poblaciones en diversas regiones europeas, debido al cambio en la vegetación y al cambio en diversas  estructuras urbanas  que antes eran favorables para la anidación  y ahora evitan el establecimiento de las aves (Shaw et al. 2008).
+
+Schneider y Miller (2014), encontraron que el establecimiento de flora invasora afecta a las comunidades de aves, donde solo
+las aves que anidan en arbustos se vieron favorecidas, mientras que el resto de la comunidad fue afectada negativamente.
+Buscar maneras de conservar las áreas verdes y favorecer que los árboles y arbustos autóctonos es recomendable
+para favorecer a la biodiversidad en general, incluyendo claro a los seres humanos.
+\newpage
+{\linespread{1}
+\epigraph{``El mundo tiene tantas formas de vida que a veces cuesta creerlo. Lo triste es que no todos conocen tal diversidad. Si las personas conocen todo lo que hay a su alrededor, cabe la posibilidad de que lo conserven y si lo que existe se conserva, será una pequeña victoria de las tantas que nos faltan para conservar la biodiversidad.''}{}\\}
+
+\section{Conclusiones}
+Para mi trabajo puedo concluir que las áreas verdes son más diversas que las áreas grises en la ciudad de Puebla.
+Sin embargo las áreas grises de la ciudad de Puebla, presentan un número importante de especies de aves que resulta mayor que otras regiones del país.
+
+El análisis de  diversidad beta para áreas verdes y grises indica  que existe una sola comunidad de aves.
+
+El análisis de gremios muestra estructuras diferentes para las áreas verdes y las áreas grises, donde el número de especies de aves insectívoras decrece en las áreas grises a comparación de las áreas verdes.
+
+Para preservar esta diversidad de aves, se recomienda aumentar el número de áreas verdes presentes en la ciudad de Puebla y por otro lado conservar las áreas ya existentes. También es importante preservar el arbolado de la ciudad ya sea en las áreas verdes o en las áreas grises para favorecer el establecimiento de la diversidad de aves y otros organismos.
+
+Como recomendación, es necesario hacer trabajos con otros grupos taxonómicos y al mismo tiempo de algunos procesos que influyen en el ciclo de vida de las especies en la ciudad de Puebla, tales como reproducción, uso de hábitat, alimentación, relaciones sociales, interacciones bióticas y las relaciones con la población humana (salud, recreación, etc). Estos estudios permitirán una mejor comprensión de las características de la ciudad de Puebla como un hábitat para la fauna y al mismo tiempo agregarán conocimiento sobre la dinámica de las zonas urbanas a nivel mundial. 
+
+\begin{thebibliography}{37}
+\bibitem{1}Almazan-Núñez; Hnterholzer-Rodriguez .(2010).Dinámica temporal en un parque urbano de la ciudad de Puebla, México. Huitzil, 11,26-34. 
+\bibitem{1}Anderson M .(2001).A new method for non-parametric multivariate analysis of variance. Austral Ecology, 2001, 26,32-46. 
+\bibitem{2}American  Ornithologists' union (AOU) (2014). \textit{Check list of north America Birds. American Ornithologist'Union}, 7a Ed. American Ornithologists' union. Washington DC.
+\bibitem{3}Arizmendi  M; Berlanga H; Pineda M. (2014). \textit{Colibríes de México y Norteamérica, Hummingbirds of Mexico ant North America},CONABIO, México. ISBN 978-607-8328-03-1
+\bibitem{4}Barragan F; Moreno C. (2011). Negative impacts of humand land use on dung beetle functional diversity.Plos one 6(3): e17976.doi:101371/journalpone-0017976.
+\bibitem{39}Carbo-Ramírez P; Zuria I. (2011). The value of small greenspaces for birds in a Mexican city. Landscape and Urban Planning.100:213-222.
+\bibitem{4}Castro-Torreblanca M; Blancas E. (2014). Aves de Ciudad Universitaria campus sur de la Universidad Autónoma de Guerrero, Chilpancingo Guerrero, México. HUITZIL 15(2):82-92.
+\bibitem{5}Ceballos  G; M, (2000). \textit{Las aves de México en peligro de extinción}. CONABIO, Instituto de Ecología UNAM, México DF. ISBN 970-9000-11-X.
+\bibitem{6}Chao A; Gotelli N ; Hsieh T.C; Sander E; Ma K.H; Colwell R; Ellison A. (2014). Rarefaction and extrapolation with Hill numbers: a framework for sampling and estimation in species diversity studies. Ecological monographs 84:45-67. 
+\bibitem{7}Chao A; Jost L, (2012). Coverage-based rarefaction and extrapolation: standardizing samples by completeness rather than size. Ecology: Ecological society of America. 93(2012) 2533-2547
+\bibitem{}Charney N; Record S. (2012). vegetarian: Jost Diversity Measures for Community Data. http://CRAN.R-project.org/package=vegetarian.
+\bibitem{}Colwell, R.K. (2013). EstimateS:Statistical estimation of species richness and shared species from samples. Version 9. Disponible en http//purl.oclc.org/estimates.
+\bibitem{} De la Fuente Díaz-Ordaz A, (2003). Estudio de la estructura de las comunidades de aves en los parques urbanos de Puebla y su entorno. Tesis de licenciatura. Universidad de las Américas Puebla.
+\bibitem{9}De Gante V; Acosta M. (2009). Parques y jardines del municipio de Puebla. Elementos 76 (2009),pp-51-55.
+\bibitem{8}Ehrlich P; Dobkin D; Wheye D.(1988). \textit{The birder's handbook: A field guide to the natural history of north american birds}.Library of congress, New York USA. ISBN 0-671-65989-8.  
+\bibitem{}Fischer J; Schneider S; Ahlers A; Miller J.(2015). Categorizing wildlife responses to urbanization and conservation implications of terminology. Conservation biology: 29 (4). 1246-1248
+\bibitem{10}Gill F; Donsker D. (2014). IOC World Bird List (v 4.2). Doi 10.14344/IOC.M.L.4.2. http://www.worldbirdnames.org .
+\bibitem{11}González G; Robert-Straut J; McGregor-Fors I (2014). Birds of neotropical green city: An up to date review of the avifauna of the city of Xalapawith additional unpublished records. Urban Ecosyst (2014) 17:991-1012. 
+\bibitem{11}González R. (2013). Avifauna de las zonas urbana y peri-urbana de Pachuca: Características físicas del hábitat y variables de perturbación.Tesis de maestría: Universidad Autónoma del estado de Hidalgo. México.
+\bibitem{}González-Oreja J; Bonache-Regidor C; Buzo-Franco D; De la Fuente Díaz Ordaz A; Hernández-Satín R. (2007). Caracterización ecológica de la avifauna de los parques urbanos de la ciudad de Puebla. Ardeola 54 (1) 2007, 53-67.
+\bibitem{11}Buzo D; Hernández L. (2004). Dinamica espacial y temporal de la comunidad de aves en los parques urbanos de Puebla y su entorno .Tesis de licenciatura: Universidad de las Américas Puebla. México.
+\bibitem{}Hanski I; Gilpin M. (1991). Metapopulation dynamics: brief history and conceptual domain. Biological Journal of the Linnean Society, 42:3-16
+\bibitem{12}Howell S; Webb S. (1995).\textit{ A guide to the birds of Mexico and Northen Central America}. Oxford University Press. New York USA.ISBN 0 19 854013 2.
+\bibitem{13}Hsieh T.C; Ma K.H; Chao A. (2014).iNEXT: iNterpolation and EXTrapolation for species diversity. R package version 2.0, URL:http://chao.stat.nthu.edu.tw/blog/software-download.
+%\bibitem{14}Hernández J; Jiménez F; Mendoza R; Rose-Burney J; López M (2013).\textit{Aves del estado de Puebla}. BUAP. Puebla, México.ISBN 978-607-487-612-3.
+\bibitem{}Hurlbert S. (1984). Pseudoreplication and the design of ecological field experiments. Ecological Monographs: 54(2) pp. 187-2 
+\bibitem{15}INEGI (Instituto nacional de estadística geografía e informática). (2009).Prontuario de información geográfica municipal de los Estados Unidos Mexicanos: Puebla, Pue, clave geoestadística 21114. disponible en: http://www.inegi.org.mx (Consultado el 8 de abril de 2015).
+\bibitem{15}INEGI (Instituto nacional de estadística geografía e informática). (2010).XII Censo de población y vivienda 2010. disponible en: http://www.inegi.org.mx (Consultado el 5 de septiembre de 2015).
+\bibitem{15}INEGI (Instituto nacional de estadística geografía e informática). (2012).Perspectiva estadística (Puebla). disponible en: http://www.inegi.org.mx (Consultado el 5 de septiembre de 2015).
+\bibitem{15}Jokimaki J; Suhonen J. (1998).Distribution and habitat selection of wintering birds in urban enviroments. Landscape and urban planning:39, 1998,253-263.
+\bibitem{15}Jost L (2006).Entropy and diversity. OIKOS, 113-2 (2006).
+\bibitem{15}Jost L (2007).Partitioning diversity into independent alpha and beta components. Ecology, 88 (10) pp 2427-2439.
+\bibitem{16}Kindt R; Coe R. (2005). \textit{Tree diversity analysis. A manual of software for common statistical methods for ecological and biodiversity studies}.World agroforestry centre (ICRAF), Nairobi Kenya. ISBN 92-9059-179-X. 
+\bibitem{}Koleff P.(2005). Conceptos y medidas de la diversidad beta. En: Halfter G; Soberón  J; Koleff P; Melic A. \textit{Sobre diversidad biológica: El significado de las diversidades alfa, beta y gamma}.m3m-Monografías 3er Milenio, vol4. SDEA,CONABIO, Grupo DIVERSITAS & CONACYT, Zaragoza, España.   
+\bibitem{17}Krebs C. (2013). \textit{Ecological methodology}. Adisson-Welsey educational publishers. USA. ISBN 0-321-02173-8. 
+\bibitem{}Leibold, M.A; Holyoak M; Mouquet N; Amarasekare P; Chase, J.M; Hoopes, M.F; Holt, R.D; Shurin, J.B; Law R; Tilman D; Loreau M; González A. The metacommunity concept: a framework for multi-scale community ecology. Ecology letters 7:601-613. 
+\bibitem{}Maechler M; Rousseeuw P; Struyf A; Hubert M; Hornik K. (2015). cluster: Cluster Analysis Basics and Extensions. R package cersion 2.0.3. http://CRAN.R-project.org/package=cluster.
+\bibitem{}Marcon E; Herault B. (2013). entropart, an R package to partition diversity- http://CRAN.R-project.org/package=entropart. 
+\bibitem{}Marzluff J; Bowman R; Donnely R.(2001). A historical perspective on urban bird research: trends, terms and approaches. En su: \textit{Avian ecology and conservation in  an urbanizing world}.Springer Science. New York. ISBN 978-1-4615-1531-9
+\bibitem{}Marzluff J. (2001). Worldwide urbanization and its effects on birds. En su: \textit{Avian ecology and conservation in  an urbanizing world}.Springer Science. New York. ISBN 978-1-4615-1531-9
+\bibitem{18}Malagamba-Rubio A; MagGregor-Fors I; Pineda-López R. (2014). Comunidades de aves en áreas verdes de Santiago de Querétaro, México. Ornitología neotropical: 24, 2013 371-386.
+\bibitem{19}MacGregor-Fors I. (2005). Listado ornitológico del centro universitario de ciencias biológicas y agropecuarias, Universidad de Guadalajara, Jalisco México: Un espacio Suburbano. HUITZIL 6:1-6.   
+\bibitem{}MacGregor-Fors I; Payton M. (2013) Contrasting Diversity Values: Statitical inferences based on overlapping confidence intervals. Plos One: Volume 8, Issue 2
+\bibitem{19}MacGregor-Fors I; Schondube J. (2011). Gray vs green urbanization: Relative importance of urban features for urban bird communities.Applied Ecology. 12 (2011) 372-381.   
+\bibitem{20}McDonnell M; Breuste J; Hahs A. (2009). \textit{Ecology of Cities and Towns: A comparative approach}.Cambridge university press.UK. ISBN 978-0-521-86112-0.   
+\bibitem{21}Magurran A. (2004). \textit{ Measuring biological diversity}. Blackwell publishing. Garsington Road Oxford UK. ISBN 978-0-6320-5633-0. 
+\bibitem{22}Mendoza R; Rose-Burney J; Jiménez F. (2012). \textit{Las aves del municipio de Puebla}. CONABIO. México.ISBN 978-607-487-471-6.
+\bibitem{23}Moreno F; Mendoza R. (2010). Aves urbanas en ciudad universitaria de la BUAP.Elementos 79 (2010) 23-27.
+\bibitem{27}Morrone J. (2000). \textit{El lenguaje de la cladística.}. Universidad nacional autónoma de México. México DF.
+\bibitem{24}Neita J; Escobar F. (2012). The potential value of agroforestry to dung beetle diversity in the wet tropical forests of the pacific lowlands of Colombia. Agroforestry Syst: Springer (2012) 85:121-131 
+\bibitem{25}Niemela J; Kotze J; Yli-Pelkonen V.(2009). Comparative urban ecology:Challenges and possibilities. En: McDonnell M; Breuste J; Hahs A. \textit{Ecology of Cities and Towns: A comparative approach}.Cambridge university press.UK. ISBN 978-0-521-86112-0.   
+\bibitem{}Olden J; Douglas M;  Douglas M.(2005). The human dimensions of biotic homogenization.Conservation biology 2036-2038. 
+\bibitem{26}Oksanen J; Blanchet G; Kindt R; Legendre P; Minchin P; O'Hara R.B; Simpson G; Solymos P; Henry M; Stevens H; Wagner H. (2015). vegan:Community Ecology package. R package versión 2.2-1- http://CRAN.R-project.org/package=vegan.
+\bibitem{}Ortega-Álvarez R; MacGregor-Fors I; Pineda-López R; Ramírez-Bastida P; Zuria I. (2013). México. En su: \textit{Ecología urbana: Experiencias en América latina}. Instituto de Ecología A.C. ISBN 978-607-00-6869-0.
+\bibitem{27}Peterson R.T; Chalif E.L. (1973). \textit{A field guide to Mexican Birds.} Peterson field guides. New York USA. ISBN 0-395-97514-X.
+\bibitem{28}Pianka E.R. (1994). \textit{Evolutionary Ecology} HarperCollins College publishers, pp,199-200.
+\bibitem{29}Pineda M; Mendoza R; Jiménez F (2009). Las aves del Bosque de Encino de la ciudad de Puebla. CONABIO. México.
+\bibitem{} QGIS Development Team. (2015). QGIS Geographic Information System. Open Source Geospatial Foundation Project. URL: http://qgis.osgeo.org.
+\bibitem{30}Ralph J.C ; Geupel G.R; Pyle P; Martin T.E; DeSante D; Millá B. (1996). \textit{Manual de métodos de campo para el monitoreo de aves terrestres.} United States Department of agriculture: Pacific Southwest Research Station. California. USA.
+\bibitem{30}Ramírez-Albores (2008). Comunidad de aves de la facultad de estudios Superiores Zaragoza campus II, UNAM, Ciudad de México.HUITZIL.9:12-19.
+\bibitem{31}R core team (2015). R: A language and environment for statistical computing. R foundation for statistical computing, Viena, Austria.URL \href{http://R-project.org/}. 
+
+\bibitem{32}Rose-Burney J. (2012). \textit{Las aves de Valsequillo y su zona de influencia: Resultados finales}. Puebla, Pue. SEMARNAT. 
+\bibitem{} Shaw L; Chamberlain Dan; Evans M. (2008). The House Sparrow \textit{Passer domesticus} in urban areas: reviewing a possible link between post-decline distribution and human economic status. J Ornithology 149:293-299. 	
+\bibitem{33}Schneider S.C; Miller J.R. (2014). Response of avian communities to invasive vegetation in urban forest fragments. Ornithological applications:Volume 116, 2014,pp 459-471
+\bibitem{34}Secretaría del Medio Ambiente y Recursos Naturales (2010). Norma oficial Mexicana NOM 059-ECOL-2010, protección ambiental-Especies nativas de México de flora y fauna silvestres-Categorías de riesgo y especificaciones para su inclusión,exclusión o cambio-Lista de especies en riesgo. Diario oficial de la federación-Segunda sección. Secretaria del medio ambiente y recursos naturales, México DF. 
+\bibitem{35}United Nations, Department of Economic and Social Affairs,Population Division.(2014). World Urbanization Prospects: The 2014 revision,Highlights (ST/ESA/SER.A/352).
+\bibitem{36}Wickham H; (2009).\textit{ggplot2:Elegant graphics for data analysis}. Springer New York. ISBN 978-0-387-98140-6.
+\bibitem{39}Valencia-Trejo G.M; Ugalde-Lezama S; Pineda-Pérez F.E; Tarango-Arámbula L.A; Lozano-Osornio A; Cruz-Miranda Y.(2014). Diversidad de aves en el campus central de la universidad autónoma de Chapingo, México. Agro-Productividad 7-7-5 Septiembre-Octubre.
+\bibitem{37}Van-Perlo B. (2006).\textit{Birds of Mexico and Central America.} Princeton University Press. New Jersey USA. ISBN 13: 978-0-691-12070-6.
+\bibitem{38}Zar J.H. (2010).\textit{Biostatistical Analysis}. Pearson Prentice Hall. New Jersey USA. ISBN 13: 978-0-13-100846-5.
+\end{thebibliography} \\[1cm]
+\newpage
+\section{Anexos}
+\subsection{Anexo 1}
+{\tiny
+\begin{longtable}[c] {|c|c|c|c|c|} 
+\caption{Especies de aves} \\ \toprule
+Especie AOU/IOC & Nombre común & Familia & Gremio & Estacionalidad \\ \midrule
+\textbf{Accipitriformes} \\ \midrule
+\textit{Accipiter cooperii} & Gavilán de Cooper & Accipitridae &  Carnívora & Migratoria \\
+\textit{Accipiter striatus} & Gavilán de pecho rufo  & Accipitridae & Carnívora &  Residente\\
+\textit{Buteo jamaicensis} & Aguililla cola roja & Accipitridae & Carnívora & Migratoria\\ \midrule
+\textbf{Falconiformes} \\ \midrule
+\textit{Falco sparverius} & Halcón cernícalo &  Falconidae & Carnívora & Migratoria\\ \midrule
+\textbf{Columbiformes} \\ \midrule
+\textit{Columba livia} & Paloma común & Columbidae & Granívora & Residente introducida \\
+\textit{Columbina inca} & Tortola cola larga & Columbidae & Granívora & Residente \\
+\textit{Columbina passerina} & Tortola coquita & Columbidae& Granívora & Residente \\
+\textit{Zenaida asiatica}& Paloma de alas blancas & Columbidae & Granívora & Residente \\
+\textit{Zenaida macroura} & Paloma huilota & Columbidae & Granívora & Residente \\ \midrule
+\textbf{Psittaciformes} \\ \midrule
+\textit{Myiopsitta monachus} & Perico monje & Psittacidae & Granívora & Residente introducida \\ \midrule
+\textbf{Cuculiformes} \\ \midrule
+\textit{Crotophaga sulcirostris} & Garrapatero pijuy & Cuculidae & Omnívora & Residente \\ \midrule
+\textbf{Apodiformes} \\ \midrule
+\textit{Amazilia beryllina} & Colibrí berilo & Trochilidae & Nectarívora & Residente \\ 
+\textit{Amazilia violiceps} & Colibrí corona violeta & Trochilidae &Nectarívora & Residente \\
+\textit{Cynanthus latirostris} & Colibrí pico ancho & Trochilidae & Nectarívora & Residente \\
+\textit{Cynanthus sordidus} & Colibrí opaco & Trochilidae & Nectarívora & Residente \\
+\textit{Hylocharis leucotis/Basilinna leucotis} & Zafiro de orejas blancas &  Trochilidae & Nectarívora & Residente \\
+\textit{Lampornis clemenciae} & Colibrí garganta azul & Trochilidae & Nectarívora & Residente\\ \midrule
+\textbf{Piciformes} \\ \midrule
+\textit{Colaptes auratus} & Carpintero de pechera & Picidae & Insectívora & Residente \\
+\textit{Picoides scalaris} & Carpintero mexicano & Picidae & Insectívora & Residente \\
+\textit{Sphyrapicus varius} & Chupasavia maculado & Picidae & Insectívora & Migratoria \\ \midrule
+\textbf{Passeriformes} \\ \midrule
+\textit{Psaltriparus minimus} & Sastrecillo & Aegithalidae & Insectívora & Residente \\
+\textit{Passerina caerulea} & Picogordo azul & Cardinalidae & Granívora & Residente \\
+\textit{Pheucticus melanocephalus} & Picogordo tigrillo & Cardinalidae & Insectívora & Residente \\
+\textit{Aphelocoma californica} & Chara & Corvidae & Omnívora & Residente \\
+\textit{Aphelocoma ultramarina} & Chara de pecho gris & Corvidae & Omnívora & Residente \\
+\textit{Aimophila ruficeps} & Zacatonero de corona rufa & Emberizidae & Granívora & Residente \\
+\textit{Chondestes grammacus} & Gorrión arlequín & Emberizidae & Granívora & Migratoria \\
+\textit{Melozone fusca}& Rascador o toqui pardo & Emberizidae & Omnívora/Granívora & Residente \\
+\textit{Passerculus sandwichensis} & Gorrión sabanero & Emberizidae & Granívora & Residente \\
+\textit{Spizella passerina} & Gorrión de ceja blanca & Emberizidae & Granívora/Insectívora & Residente \\
+\textit{Sporophila torqueola} & Semillero de collar & Emberizidae & Granívora & Residente \\
+\textit{Haemorhous mexicanus} & Gorrión mexicano & Fringilidae & Granívora & Residente \\
+\textit{Spinus psaltria} & Jilguero dominico & Fringilidae & Granívora & Residente \\
+\textit{Hirundo rustica} & Golondrina tijereta & Hirundinidae & Insectívora & Residente \\
+\textit{Riparia riparia} & Golondrina ribereña &  Hirundinidae & Insectívora & Migratoria \\
+\textit{Agelaius phoeniceus} & Tordo Sargento & Icteridae & Insectívora & Residente\\ 
+\textit{Icterus bullockii} & Bolsero calandria & Icteridae & Insectívora/Frugívora & Migratoria \\
+\textit{Icterus cucullatus} & Bolsero encapuchado &  Icteridae & Insectívora/Frugívora & Migratoria \\
+\textit{Icterus galbula} & Bolsero de Baltimore & Icteridae & Insectívora/Frugívora & Migratoria \\
+\textit{Icterus spurius} & Bolsero castaño &  Icteridae & Insectívora & Migratoria \\
+\textit{Molothrus aeneus} & Tordo de ojos rojos & Icteridae & Insectívora/Granivora & Residente \\
+\textit{Molothrus ater} & Tordo cabeza café & Icteridae & Insectívora & Residente \\
+\textit{Quiscalus mexicanus} & Zanate mayor & Icteridae & Omnívora & Residente \\
+\textit{Lanius Ludovicianus} & Alcaudón verdugo & Laniidae & Carnívora/Insectívora & Residente \\
+\textit{Toxostoma curvirostre} & Cuitlacoche pico curvo &  Mimidae & Omnívora/Insectívora & Residente \\
+\textit{Cardellina pusilla} & Chipe corona negra & Parulidae & Insectívora & Migratoria \\
+\textit{Geothlypis trichas} & Mascarita común &  Parulidae & Insectívora & Residente \\
+\textit{Mniotilta varia} & Chipe trepador & Parulidae & Insectívora & Migratoria \\
+\textit{Oreothlypis celata/Leiothlypis celata} & Chipe corona naranja & Parulidae & Insectívora & Migratoria \\
+\textit{Oreothlypis ruficapilla/Leiothlypis ruficapilla} & Chipe de coronilla & Parulidae & Insectívora & Migratoria \\
+\textit{Setophaga coronata} & Chipe coronado & Parulidae & Insectívora & Migratoria \\
+\textit{Setophaga nigrescens} & Chipe negro y gris & Parulidae & Insectívora & Migratoria \\
+\textit{Setophaga petechia} & Chipe amarillo & Parulidae & Insectívora & Migratoria \\
+\textit{Setophaga townsendi} & Chipe negro y amarillo & Parulidae & Insectívora & Migratoria \\
+\textit{Passer domesticus} & Gorrión inglés & Passeridae & Omnívora/Granívora & Residente introducida \\
+\textit{Ptiliogonys cinereus} & Capulinero gris & Ptiliogonatidae & Insectívora & Residente \\
+\textit{Sturnus vulgaris} & Estornino europeo & Sturnidae & Insectívora & Residente introducida \\
+\textit{Polioptila caerulea} & Perlita azulgris & Sylviidae & Insectívora & Migratoria \\
+\textit{Regulus calendula} & Reyezuelo de ojo rojo & Sylviidae & Insectívora & Migratoria \\
+\textit{Piranga rubra} & Tángara roja & Thraupidae & Insectívora & Migratoria \\
+\textit{Campylorhynchus jocosus} & Matraca del Balsas & Troglodytidae & Insectívora & Residente \\
+\textit{Catherpes mexicanus} & Chivirín Barranqueño & Troglodytidae & Insectívora & Residente \\
+\textit{Thryomanes  bewickii} & Chivirín de cola oscura & Troglodytidae & Insectívora & Residente \\
+\textit{Myadestes occidentalis} & Clarín jilguero & Turdidae & Insectívora & Residente \\
+\textit{Turdus migratorius} & Mirlo primavera & Turdidae & Insectívora & Residente \\
+\textit{Turdus rufopalliatus} & Primavera huertera & Turdidae & Insectívora & Residente \\
+\textit{Contopus pertinax} & Pibi tengo frío & Tyrannidae & Insectívora & Residente \\
+\textit{Contopus sordidulus} & Pibí occidental & Tyrannidae & Insectívora & Migratoria \\
+\textit{Empidonax minimus} & Mosquero mínimo & Tyrannidae & Insectívora & Migratoria \\
+\textit{Empidonax occidentalis} & Mosquero de barrancas & Tyrannidae & Insectívora & Residente \\
+\textit{Myiarchus cinerascens} & Papamoscas cenizo & Tyrannidae & Insectívora & Migratoria \\
+\textit{Pyrocephalus rubinus} & Mosquerito cardenalito & Tyrannidae & Insectívora & Residente \\
+\textit{Sayornis nigricans} & Mosquerito negro & Tyrannidae & Insectívora & Residente \\
+\textit{Tyrannus melancholicus} & Tirano tropical & Tyrannidae & Insectívora & Residente \\
+\textit{Tyrannus verticalis} & Tirano palido & Tyrannidae & Insectívora & Migratoria \\
+\textit{Tyrannus vociferans} & Tirano gritón & Tyrannidae & Insectívora & Residente \\
+\textit{Xenotriccus mexicanus} & Mosquero del Balsas &  Tyrannidae & Insectívora & Residente \\ \bottomrule
+ 
+\end{longtable}
+}
+\subsection{Anexo 2}
+{\scriptsize
+\begin{longtable}[c] {|c|c|c|c|c|c|c|c|c|c|} 
+\caption[Especies de aves por áreas verdes]{Especies de aves por áreas verdes. El * significa presencia del ave en el área verde} \\ \toprule
+Especie AOU/IOC & CHA & CUB & FUE & PAM & PAR & PAT & PAE & PAJ & PAB \\ \midrule
+\textit{Accipiter cooperii} & & & * & * & & * & & &  \\
+\textit{Accipiter striatus} &   &  &  &  & & & * & &\\
+\textit{Buteo jamaicensis} &  &  & * & & & *& & &\\
+\textit{Falco sparverius} &  &  * & * & & & & & & \\
+\textit{Columba livia} & * & * & * & & * & * & * & * & *  \\
+\textit{Columbina inca} & * & * & * & * & * & * & * & * & * \\
+\textit{Columbina passerina} &  & &  &  & * & & & & \\
+\textit{Zenaida asiatica}& * & * & * & * & * & * & * & * & * \\
+\textit{Zenaida macroura} &  & * & * & & * & & & & \\
+\textit{Myiopsitta monachus} & * & * & * & & & * & * & & \\ 
+\textit{Crotophaga sulcirostris} & * &  &  & & & * & & & \\ 
+\textit{Amazilia beryllina} &  &  &  & * & & & & & \\ 
+\textit{Amazilia violiceps} &  & * & & * & &*& & * &  \\
+\textit{Cynanthus latirostris} & *  & * & * & * & * & & * & &*\\
+\textit{Cynanthus sordidus} & * & * &  & * & & & *& & \\
+\textit{Hylocharis leucotis/Basilinna leucotis} &  &   & * & * & &  & * &* &  \\
+\textit{Lampornis clemenciae} &  &  & * & * & & & & &\\ 
+\textit{Colaptes auratus} &  & * &  & & & & & & \\
+\textit{Picoides scalaris} &  & * & * & * & & * & * & &* \\
+\textit{Sphyrapicus varius} &  & * & * & & & & * & * & \\ 
+\textit{Psaltriparus minimus} &  & * & * & * & * & * & * & * & \\
+\textit{Passerina caerulea} & * & * & * & & & * & & & \\
+\textit{Pheucticus melanocephalus} & * &  &  & * & & * & &* & * \\
+\textit{Aphelocoma californica} &  & * &  & & & & & & \\
+\textit{Aimophila ruficeps} &  & * &  & & & & & & \\
+\textit{Chondestes grammacus} &  & &  & & & * & & & \\
+\textit{Melozone fusca}& * & * & * & * & * & * & * & * & \\
+\textit{Passerculus sandwichensis} &  &  & * & * & * & & & & \\
+\textit{Spizella passerina} &  & * & * & & * & * & * & & \\
+\textit{Sporophila torqueola} & * & * & * & & & * & & & \\
+\textit{Haemorhous mexicanus} & * & * & * & * & * & * & * & * & *  \\
+\textit{Spinus psaltria} & * & * & * & * & * & * & * & & \\
+\textit{Hirundo rustica} & * & * & * & * & * & * & * & & * \\
+\textit{Riparia riparia} &  &  * & * & & &* & & & \\
+\textit{Agelaius phoeniceus} & * & * &  &  & * & & & & \\ 
+\textit{Icterus cucullatus} & * &  * & * & * & & & * & &\\
+\textit{Icterus galbula} &  & * &  & * & & & &\\
+\textit{Icterus spurius} &  &  * &  & & & & * & &\\
+\textit{Molothrus aeneus} & * & * & * & & * & * & * & * & \\
+\textit{Molothrus ater} &  & * & * & & & & & & \\
+\textit{Quiscalus mexicanus} & * & * & * & * & * & * & * & * & * \\
+\textit{Lanius Ludovicianus} & * & * &  & & & & & & \\
+\textit{Toxostoma curvirostre} & * &  * & * & * & * & * & * & &* \\
+\textit{Cardellina pusilla} & * & &  & & & * & & & \\
+\textit{Geothlypis trichas} & * &   &  & & & & & & \\
+\textit{Mniotilta varia} &  &  &  & * & & & & & \\
+\textit{Oreothlypis celata/Leiothlypis celata} & * & * &  & & & * & * & &* \\
+\textit{Oreothlypis ruficapilla/Leiothlypis ruficapilla} & * & * &  & * & * & * & &* &* \\
+\textit{Setophaga coronata} & * & * & * & * & * & * & * & * & *\\
+\textit{Setophaga nigrescens} &  &  &  & & & * & & & \\
+\textit{Setophaga petechia} & * &  & * & & & &* & & \\
+\textit{Setophaga townsendi} &  &  &  & & & & & * & \\
+\textit{Passer domesticus} & * & * & * & * & * & * & * & * & * \\
+\textit{Ptiliogonys cinereus} &  &  &  & & & * & & & \\
+\textit{Sturnus vulgaris} &  & * &  & & & & & & \\
+\textit{Polioptila caerulea} & * & * & * & * & * & * & * & * &  \\
+\textit{Regulus calendula} & * &  & * & * & * & & * & * & * \\
+\textit{Piranga rubra} &  &  &  & * & & * & & & \\
+\textit{Campylorhynchus jocosus} &  & * & * & * & &*& & * & \\
+\textit{Thryomanes  bewickii} & * & * & * & * & * & * & * & * & *\\
+\textit{Myadestes occidentalis} &  &  & * & & & & & & \\
+\textit{Turdus migratorius} &  &  & * & & & & & & \\
+\textit{Turdus rufopalliatus} & * & * & * & * & * & * & * & * & * \\
+\textit{Contopus pertinax} &  &  &  & & & * & & &  \\
+\textit{Contopus sordidulus} & * & * & * & * & &* & & &\\
+\textit{Empidonax minimus} &  &  & * & & & & & & \\
+\textit{Empidonax occidentalis} &  &  & * & * & & & & &\\
+\textit{Myiarchus cinerascens} &  & * &  & & & & & & \\
+\textit{Pyrocephalus rubinus} & * & * & * & * & * & * & * & * & *  \\
+\textit{Sayornis nigricans} &  &  &  & & * & & & & \\
+\textit{Tyrannus melancholicus} & * & * &  & & &* & * & &* \\
+\textit{Tyrannus verticalis} &  &  &  & & &* & & & \\
+\textit{Tyrannus vociferans} & * & * & * & * & * & * & * & * &*   \\
+\textit{Xenotriccus mexicanus} &  &  &  & & & * & & & \\ \bottomrule
+\end{longtable}
+}
+\newpage
+\subsection{Anexo 3}
+{\scriptsize
+\begin{longtable}[c] {|c|c|c|c|c|c|c|c|c|c|} 
+\caption[Especies de aves en areas grises]{Especies de aves en areas grises. El * significa presencia del ave en las areas grises} \\ \toprule
+Especie AOU/IOC & CHA & CUB & FUE & PAM & PAR & PAT & PAE & PAJ & PAB \\ \midrule
+\textit{Accipiter cooperii} &  &  &  & & & & * & & \\
+\textit{Buteo jamaicensis} &  &  &  & & & & * & &\\ 
+\textit{Columba livia} & * & * & * & * & * & * & * & * &*\\
+\textit{Columbina inca} & * & * & * & * & * & * & * & * & *  \\
+\textit{Zenaida asiatica}& * & * & * & * & * & * & * & * &* \\
+\textit{Zenaida macroura} &  &  & * & & * & & & & \\ 
+\textit{Myiopsitta monachus} & * & * &  & & & &* & * & \\ 
+\textit{Amazilia beryllina} &  &  & * & *  & & & &* &\\ 
+\textit{Amazilia violiceps} &  & & * & & & *& & & \\
+\textit{Cynanthus latirostris} & * & * &  & & * & * & & & \\
+\textit{Cynanthus sordidus} &  &  & * & * & &* & & & \\
+\textit{Hylocharis leucotis/Basilinna leucotis} &  &   & * & * & & & &* & \\
+\textit{Picoides scalaris} &  & * &  & & & & & &  \\
+\textit{Psaltriparus minimus} &  &  & * & & & & & & \\
+\textit{Aphelocoma californica} &  &  &  & * & & & & & \\
+\textit{Aphelocoma ultramarina} &  & * & * & & & & & & \\
+\textit{Melozone fusca}& * & * & * & * & * & * & &* &  \\
+\textit{Haemorhous mexicanus} & * & * & * & * & * & * & * & * \\
+\textit{Spinus psaltria} & * & * &  &  & * & & * & &\\
+\textit{Hirundo rustica} &  & * & * & * & * & * & * & & *\\
+\textit{Icterus bullockii} &  &  & * & & & & & & \\
+\textit{Icterus cucullatus} &  &  * &  & & & & & & \\
+\textit{Icterus galbula} &  &  & * & & & & & & \\
+\textit{Molothrus aeneus} & * & * &  & * & * & * & * & * &\\
+\textit{Quiscalus mexicanus} & * & * & * & * & * & * & * & * &* \\
+\textit{Lanius Ludovicianus} &  &  &  & & & &* & & \\
+\textit{Toxostoma curvirostre} & * &  * & * & * & * & * & * &* &* \\
+\textit{Oreothlypis celata/Leiothlypis celata} &  &  & * & & & & & & \\
+\textit{Oreothlypis ruficapilla/Leiothlypis ruficapilla} &  & * & * & & &* & & & \\
+\textit{Setophaga coronata} & * & * & * & & & &* & * & \\
+\textit{Passer domesticus} & * & * & * & * & * & * & * & * &*  \\
+\textit{Regulus calendula} &  & * &  & & & & & & \\
+\textit{Piranga rubra} &  & * &  & & & & & & \\
+\textit{Catherpes mexicanus} &  & * &  & & & & & & \\
+\textit{Thryomanes  bewickii} & * & * & * & * & * & * & * & * &*\\
+\textit{Turdus rufopalliatus} &  & * &  & * & &* & * & & \\
+\textit{Empidonax occidentalis} &  &  &  & & & &* & & \\
+\textit{Pyrocephalus rubinus} & * & * & * &  & * &* & & & \\
+\textit{Tyrannus vociferans} & * & * & * & * & &* & * & &* \\
+ 
+\end{longtable}
+}
+\subsection{Anexo 4}
+
+{\scriptsize
+\begin{longtable}[c] {|c|c|c|c|} 
+\caption{Gremios y abundancias de aves} \\ \toprule
+Especie & Clave & Gremio  & Abundancia  \\ \midrule
+\textit{Accipiter cooperii} & ACCO & Carnívora & 5\\
+\textit{Accipiter striatus} & ACST & Carnívora & 1\\
+\textit{Agelaius phoeniceus} & AGPH & Insectívora & 14\\
+\textit{Aimophila ruficeps} & AIRU & Granívora & 1\\
+\textit{Amazilia beryllina} & AMBE & Nectarívora & 10\\
+\textit{Amazilia violiceps} & AMVI & Nectarívora & 22\\
+\textit{Aphelocoma californica} & APCA & Omnívora& 2\\
+\textit{Aphelocoma ultramarina} & APUL & Omnívora & 4\\
+\textit{Buteo jamaicensis} & BUJA & Carnívora & 3\\
+\textit{Campylorhynchus jocosus} & CAJO & Insectívora & 143\\
+\textit{Cardellina pusilla} & WIPU & Insectívora & 4\\
+\textit{Catherpes Mexicanus} & CATME & Insectívora & 1\\
+\textit{Chondestes grammacus} & CHGR & Granívora & 8\\
+\textit{Colaptes auratus} & COAU & Insectívora & 2\\
+\textit{Columba livia} & COLI & Granívora & 2164\\
+\textit{Columbina inca} & COIN & Granívora & 821\\
+\textit{Columbina passerina} & COPA & Granívora & 3\\
+\textit{Contopus pertinax} & COPE & Insectívora & 1\\
+\textit{Contopus sordidulus} & COSU & Insectívora & 8\\
+\textit{Crotophaga sulcirostris} & CRSU & Omnívora & 14\\
+\textit{Cynanthus latirostris} & CILA & Nectarívora & 68\\
+\textit{Cynanthus sordidus} & CISO & Nectarívora & 10\\
+\textit{Empidonax minimus} & EMMI & Insectívora & 1\\
+\textit{Empidonax occidentalis} & EMOC & Insectívora & 11\\
+\textit{Falco sparverius} & FASP & Carnívora & 3\\
+\textit{Geothlypis trichas} & GETR & Insectívora & 2\\
+\textit{Haemorhous mexicanus} & CAME & Granívora & 1981\\
+\textit{Hirundo rustica} & HIRU & Insectívora & 352\\
+\textit{Hylocharis leucotis} & HYLE & Nectarívora & 15\\
+\textit{Icterus bullockii} & ICBU & Insectívora & 1\\
+\textit{Icterus cucullatus} & ICCU & Insectívora & 8\\
+\textit{Icterus galbula} & ICGA & Insectívora & 5\\
+\textit{Icterus spurius} & ICSP & Insectívora & 3\\
+\textit{Lampornis clemenciae} & LACL & Nectarívora & 4\\
+\textit{Lanius Ludovicianus} & LALU & Carnívora & 3\\
+\textit{Melozone fusca} & PIFU & Omnívora & 242\\
+\textit{Mniotilta varia} & MNVA & Insectívora & 3\\
+\textit{Molothrus aeneus} & MOAE & Insectívora & 273\\
+\textit{Molothrus ater} & MOAT & Insectívora & 3\\
+\textit{Myadestes occidentalis} & MYOC & Insectívora & 1\\
+\textit{Myiarchus cinerascens} & MYCI & Insectívora & 1\\
+\textit{Myiopsitta monachus} & MYMO & Granívora & 95\\
+\textit{Oreothlypis celata} & VECE & Insectívora & 18\\
+\textit{Oreothlypis ruficapilla} & VERU & Insectívora & 42\\
+\textit{Passer domesticus} & PADO & Omnívora & 2932\\
+\textit{Passerculus sandwichensis} & PASA & Granívora & 9\\
+\textit{Passerina caerulea} & PACA & Granívora & 11\\
+\textit{Pheucticus melanocephalus} & PHME & Insectívora & 32\\
+\textit{Picoides scalaris} & PISC & Insectívora & 32\\
+\textit{Piranga rubra} & PIRU & Insectívora & 3\\
+\textit{Polioptila caerulea} & POCA & Insectívora & 51\\
+\textit{Psaltriparus minimus} & PSMI & Insectívora & 53\\
+\textit{Ptiliogonys cinereus} & PTCI & Insectívora & 1\\
+\textit{Pyrocephalus rubinus} & PYRU & Insectívora & 349\\
+\textit{Quiscalus mexicanus} & QUME & Omnívora & 3695\\
+\textit{Regulus calendula} & RECA & Insectívora & 15\\
+\textit{Riparia riparia} & RIRI & Insectívora & 13\\
+\textit{Sayornis nigricans} & SANI & Insectívora & 2\\
+\textit{Setophaga coronata} & DECO & Insectívora & 530\\
+\textit{Setophaga nigrescens} & DENI & Insectívora & 1\\
+\textit{Setophaga petechia} & DEPE & Insectívora & 4\\
+\textit{Setophaga townsendi} & DETO & Insectívora & 1\\
+\textit{Sphyrapicus varius} & SPVA & Insectívora & 5\\
+\textit{Spinus psaltria} & SPPS & Granívora & 54\\
+\textit{Spizella passerina} & SPPA & Insectívora & 53\\
+\textit{Sporophila torqueola} & SPTU & Granívora & 14\\
+\textit{Sturnus vulgaris} & STVU & Insectívora & 1\\
+\textit{Thryomanes  bewickii} & THBE & Insectívora & 419\\
+\textit{Toxostoma curvirostre} & TOCU & Omnívora & 263\\
+\textit{Turdus migratorius} & TUMI & Insectívora & 4\\
+\textit{Turdus rufopalliatus} & TURU & Insectívora & 80\\
+\textit{Tyrannus melancholicus} & TYME & Insectívora & 24\\
+\textit{Tyrannus verticalis} & TYVE & Insectívora & 1\\
+\textit{Tyrannus vociferans} & TYVO & Insectívora & 251\\
+\textit{Xenotriccus mexicanus} & AEME & Insectívora & 3\\
+\textit{Zenaida asiatica} & ZEAS & Granívora & 701\\
+\textit{Zenaida macroura} & ZEMA & Granívora & 39\\ \bottomrule
+\end{longtable}
+}
+\newpage
+\section{Códigos de los análisis de diversidad}
+Los análisis de diversidad y estadísticos se realizaron con el programa R (R core team 2015) en conjunto con los paquetes \textit{vegan} (Oksanen 2015), \textit{entropart} (Marcon y Herault 2013) y  \textit{ggplot2} (Wickham 2009), este último se utilizó para los gráficos. Al mismo tiempo para realizar estos análisis, recomiendo utilizar los paquetes \textit{BiodiversityR} (Kindth 2005), \textit{vegetarian} (Charney y Record 2012), \textit{rareNMtests} y \textit{FD}.
+\subsection{Riqueza y abundancia}
+En esta sección se realizaran las gráficas de rango abundancia y los estimadores.
+Para comodidad del lector y para facilitar las cosas se recomienda instalar los paquetes necesarios,
+a continuación se mencionan los comandos.
+ \begin{lstlisting}
+install.packages("vegan",dep=TRUE)
+#Escogemos el servidor que queramos, se sugiere el de México, sin embargo pueden utilizar 
+#servidores de Inglaterra o Estados Unidos
+install.packages("BiodiversityR",dep=TRUE)
+install.packages("vegetarian",dep=TRUE)
+install.packages("rareNMtests",dep=TRUE)
+install.packages("FD",dep=TRUE)
+install.packages("entropart",dep=TRUE)
+install.packages("ggplot2",dep=TRUE)
+
+#Para el caso de el paquete iNEXT se necesitan realizar estos comandos 
+#instalar el paquete devtools
+install.packages("devtools",dep=TRUE)
+#llamar al paquete
+library(devtools)
+library(devtools)
+install_github("JohnsonHsieh/iNEXT")
+library(iNEXT)
+\end{lstlisting}
+Para este caso usaremos como ejemplo los datos de esta tesis correspondientes a la primera visita de todos los parques, dicha base de datos 
+se denominará ejemplo de tesis y la encontraremos en los  siguientes links: \url{http://paste.ubuntu.com/13349649/} o \url{http://paste.ubuntu.com/13087482/}.
+\begin{lstlisting}
+#llamamos a nuestra base de datos en este caso la dirección cambia de acuerdo a tu donde hayas puesto los datos en tu computadora
+#mi dirección es la siguiente
+read.table("/home/fertimjim/Documentos/Fer/datos tesis/ejemplotesis.txt",header=TRUE,sep=",")->datos1
+attach(datos1)
+names(datos1)
+##la curva de rango abundancia 
+subset(datos1,Tipo=="par")->parq
+parq[,5:81]->parq1
+colSums(parq1)->tavesp
+tavesp
+rev(sort(tavesp))->tavesn;tavesn
+tavesn[-75:-77]->tavesn
+names(tavesn)->tavesnamep
+as.numeric(tavesp)->ranp1
+rev(sort(ranp1))->ranp2;ranp2
+ranp2[-75:-77]->ranp2;ranp2
+log10(ranc2)->ranc4
+ranc4[1:40]->ranca
+###llamamos las librerias necesarias
+library(ggplot2)
+c(tavesnamep,tavesnamec)->tavesj
+c(ranp4,ranca)->ranj
+c((12:85),(1:40))->secuj
+c(rep("Áreas verdes",74),rep("Calles",40))->Sitij
+data.frame(tavesj,ranj,secuj,Sitij)->juntj
+x11()
+ggplot(juntj,aes(x=secuj,y=ranj,label=tavesj,shape=Sitij))+xlab("Rango")+ylab("Abundancias  Log10")+geom_point(size=8)+geom_line(colour="black",size=0.5)+theme(panel.background=element_blank(),text=element_text(family="serif"),legend.position="top",legend.title=element_blank(),panel.grid.major.x=element_blank(),panel.grid.major.y=element_blank(),axis.text=element_text(colour="black"))+ggtitle("")+geom_text(size=2.5,family="serif",fontface=3,angle=65,hjust=-0.5,vjust=-0.5)+scale_x_continuous(breaks=c(1,40,12,85),labels=c("1","40","1","74"),limits=c(0,85))+scale_shape_manual(values=c("*","°"))+scale_color_manual(values=c("Gray10","Black"))+scale_y_continuous(limits=c(-0.5,4))->grafj3;grafj3
+#lo guardamos donde nos guste
+png(file="/home/fertimjim/Documentos/Fer/datos tesis/imagenes/rangologaap5.png", width=2500,height=2000,res=300)
+grafj3
+dev.off()
+#la gráfica de rango abundancia a quedado lista
+\end{lstlisting}
+Ahora el análisis de covarianza para el área arbolada y para las distancias de las áreas verdes a la zona rural más cercana
+\begin{lstlisting}
+(datos1[,5:81])->datos2
+by(datos2,list(datos1$Sitio,datos1$Tipo),FUN=colSums)->sumadatos1;sumadatos1
+unlist(sumadatos1)->sumadatos2;sumadatos2
+matrix(sumadatos2,77,18)->matriz1
+t(matriz1)->matriz1
+colnames(matriz1)<-names(datos2)
+rownames(matriz1)<-c("artc","atoc","chac","cuc","ecoc","fuec","juac","pabc","panc","artp","atocp","chap","cup","ecop","fuep","juap","pabp","panp")
+#edit(matrizsuma)
+data.frame(matriz1)->matriz2
+Hverd<- function(x){
+  x<-x[x>0]
+  P<-x/sum(x)
+  -sum(P*log(P))->la
+  exp(la)->la2
+  print(la2)
+}
+c(Hverd(matriz2[1,]),Hverd(matriz2[2,]),Hverd(matriz2[3,]),Hverd(matriz2[4,]),Hverd(matriz2[5,]),Hverd(matriz2[6,]),Hverd(matriz2[7,]),Hverd(matriz2[8,]),Hverd(matriz2[9,]),Hverd(matriz2[10,]),Hverd(matriz2[11,]),Hverd(matriz2[12,]),Hverd(matriz2[13,]),Hverd(matriz2[14,]),Hverd(matriz2[15,]),Hverd(matriz2[16,]),Hverd(matriz2[17,]),Hverd(matriz2[18,]))->verdadera1
+area3<-rep(c(16.1,4.8,5.5,6.21,6.9,7.38,9.77,7.58,4,44.4,29.8,54.2,85.5,86.1,34.5,73.7,45.3,76.8),each=1)
+sum(area3)
+area3
+tipos1<-rep(c("calles","parques"),each=9)
+as.factor(tipos1)->tipos2
+data.frame(verdadera1,area3,tipos2)
+ancova4<-lm(verdadera1~area3*tipos2);ancova4
+ancova4<-lm(verdadera1~tipos2*area3);ancova4
+summary(ancova4)
+anova(ancova4)
+#análisis de covarianza para las distancias
+distancias<-rep(c(3855,3681,5428,3923,1887,664,4400,5506,3370),2)
+tipos<-rep(c("calles","parques"),each=9)
+as.factor(tipos)->tipos1
+data.frame(verdadera1,tipos,distancias)
+ancova5<-lm(verdadera1~tipos*distancias);ancova5
+summary(ancova5)
+anova(ancova5,test="Chisq")
+#listo el análisis de covarianza
+\end{lstlisting}
+Calculando ahora el porcentaje de cobertura de la muestra
+\begin{lstlisting}
+(datos1[,5:81])->datos2
+taves<-colSums(datos2)
+library("iNEXT")
+taves
+t(rev(sort(taves)))->avesillas;avesillas
+as.numeric(avesillas)->avesillas2
+c(avesillas2)->avesillas3;avesillas3
+length(avesillas3)
+iNEXT(avesillas3, q=0, datatype="abundance")->estimador1
+estimador1
+estimador1$iNextEst$m->xa
+estimador1$iNextEst$qD->ya
+estimador1$iNextEst$qD.95.LCL->yame
+estimador1$iNextEst$qD.95.UCL->yam
+estimador1$iNextEst$SC.95.LCL->yame2;yame2
+estimador1$iNextEst$SC.95.UCL->yam2
+estimador1$iNextEst$SC->za
+estimador1$iNextEst$method->metodo;metodo
+rep("Intrapolacion",19)->intra;intra
+rep("extrapolacion",20)->extra;extra
+c(intra,"Observada",extra)->Metodo;Metodo
+data.frame(Metodo,metodo,xa,ya,yame,yam,yame2,yam2,za)->paragraf;paragraf
+subset(datos1,Tipo=="par")->avepa;avepa
+names(avepa)
+avepa1<-avepa[,5:81];avepa1
+avepa2<-colSums(avepa1);avepa2
+rev(sort(avepa2))->avepa3;avepa3
+data.frame(avepa3,seq(c(1:77)))
+avepa3[c(-75,-76,-77)]->avepa4
+t(avepa4)->avepa5;avepa5
+as.numeric(avepa5)->avepa6
+length(avepa6)
+as.numeric(avepa2)->avepa2m
+rev(sort(avepa2m))
+iNEXT(avepa6, q=0, datatype="abundance")->estimadorpa;estimadorpa
+estimadorpa
+estimadorpa$iNextEst$m->xap
+estimadorpa$iNextEst$qD->yap
+estimadorpa$iNextEst$qD.95.LCL->yamep
+estimadorpa$iNextEst$qD.95.UCL->yamp
+estimadorpa$iNextEst$SC.95.LCL->yamep2;yamep2
+estimadorpa$iNextEst$SC.95.UCL->yamp2
+estimadorpa$iNextEst$SC->zap
+estimadorpa$iNextEst$method->metodop;metodop
+rep("Intrapolacion",19)->intrap;intrap
+rep("extrapolacion",20)->extrap;extrap
+c(intrap,"Observada",extrap)->Metodo;Metodo
+data.frame(Metodo,metodop,xap,yap,yamep,yamp,yamep2,yamp2)->paragrafp;paragrafp
+subset(datos1,Tipo=="cal")->aveca;aveca
+names(aveca)
+aveca1<-aveca[,5:81];aveca1
+aveca2<-colSums(aveca1);aveca2
+rev(sort(aveca2))->aveca3;aveca3
+data.frame(aveca3,seq(c(1:77)))
+t(aveca3)->aveca4;aveca4
+aveca4[,c(-41:-77)]->aveca5;aveca5
+as.numeric(aveca5)->aveca6
+iNEXT(aveca6, q=0, datatype="abundance")->estimadorca;estimadorca
+estimadorca$iNextEst$m->xac
+estimadorca$iNextEst$qD->yac
+estimadorca$iNextEst$qD.95.LCL->yamec
+estimadorca$iNextEst$qD.95.UCL->yamc
+estimadorca$iNextEst$SC.95.LCL->yamec2;yamec2
+estimadorca$iNextEst$SC.95.UCL->yamc2
+estimadorca$iNextEst$method->metodoc;metodoc
+estimadorca$iNextEst$SC->zac
+rep("Intrapolacion",19)->intrac;intrac
+rep("extrapolacion",20)->extrac;extrac
+c(intrac,"Observada",extrac)->Metodo;Metodo
+data.frame(Metodo,metodoc,xac,yac,yamec,yamc,yamec2,yamc2)->paragrafc;paragrafc
+rep(Metodo,3)->Metodot
+rep(metodo,3)->metodot
+c(xa,xap,xac)->xat
+c(ya,yap,yac)->yat
+c(yame,yamep,yamec)->yamet
+c(yam,yamp,yamc)->yamt
+c(yame2,yamep2,yamec2)->yamet2
+c(yam2,yamep2,yamec2)->yamt2
+c(za,zap,zac)->zat
+rep(c("General","Parques","Calles"),each=40)->tipos
+data.frame(Metodot,metodot,xat,yat,zat,yamet,yamt,yamet2,yamt2,tipos)->generali
+library(ggplot2)
+ggplot(generali,aes(x=xat,y=yat,fill=tipos,linetype=tipos))+geom_line()+scale_linetype_manual(values=c("solid","solid","solid"))+geom_point(aes(shape=factor(Metodot,"extrapolacion")))+theme(panel.background=element_blank(),legend.position="none",text=element_text(family="serif"),axis.text.y=element_text(colour="black"),axis.text.x=element_text(colour="black"))+labs(fill="Tipos",linetype="Tipos",shape="Método")+guides(fill=FALSE)+geom_ribbon(aes(ymin=yamet,ymax=yamt),alpha=0.2)+scale_fill_manual(values=c("gray50","gray50","gray50"))+xlab("Número de individuos")+ylab("Número de especies")->plotag2;plotag2
+#plotag2+annotate("text",x=19000,y=46,label="Calles",family="serif")+annotate("text",x=20000,y=95,label="General",family="serif")+annotate("text",x=11000,y=90,label="Áreas verdes",family="serif")
+#ggsave("/home/fertimjim/Documentos/Fer/datos tesis/imagenes/estimbw2.png",width=21, height=15,units="cm")\end{lstlisting}
+Ahora la comparación mediante intervalos de confianza al 84\%. Cabe aclarar que son los datos que nos muestra EstimateS (Colwell 2013), pueden calcularlo con R si lo desean, con la paquetería \textit{vegan}.
+\begin{lstlisting}
+c(74,40)->generalian1
+c(1,2)->ordensin1
+c("Áreas verdes","Áreas grises")->citys1
+interu1<-c(5,4.7)
+interu2<-c(generalian1+interu1)
+interl2<-c((abs(interu1-generalian1)))
+data.frame(generalian1,citys1,interu2,interl2)->framip3
+library(ggplot2)
+ggplot(framip3,aes(x=citys1,y=generalian1,shape=citys1,color=citys1))+geom_point(size=12)+geom_line(aes(group=citys1))+geom_errorbar(aes(ymin=interl2,ymax=interu2),linetype="dotted",size=0.8)+theme(panel.background=element_blank(),axis.text.x=element_text(colour="black",size=13),text=element_text(family="serif",size=13),axis.text.y=element_text(colour="black",size=13),legend.position="null",legend.title=element_blank())+scale_color_manual(values=c("Grey10","Black"))+scale_shape_manual(values=c("*","°"))->estima1
+estima1 + ylab("Número de especies (84% Intervalo de confianza)") +xlab("Sitios")
+png(file="~/Documentos/Fer/datos tesis/imagenes/raref84.png",width=700, height=450,res=100)
+par(mar=c(5,3,2,2)+0.1)
+ggplot(framip3,aes(x=citys1,y=generalian1,shape=citys1,color=citys1))+geom_point(size=12)+geom_line(aes(group=citys1))+geom_errorbar(aes(ymin=interl2,ymax=interu2),linetype="dotted",size=0.8)+theme(panel.background=element_blank(),axis.text.x=element_text(colour="black",size=13),text=element_text(family="serif",size=13),axis.text.y=element_text(colour="black",size=13),legend.position="null",legend.title=element_blank())+scale_color_manual(values=c("Gray10","Black"))+scale_shape_manual(values=c("*","°"))->estima1
+estima1 + ylab("Número de especies (84% Intervalo de confianza)") +xlab("Sitios")
+dev.off()
+
+\end{lstlisting}
+\subsection{Análisis de diversidad beta y similitud}
+Ahora los índices de similitud
+\begin{lstlisting}
+subset(datos1,Tipo=="par")->betapa
+betapa[,1:81]->betapa1;betapa1
+betapa1[,-2:-4]->betapa2;betapa2
+subset(betapa2,Sitio=="art")->bartp
+bartp[,-1]->bartp1
+colSums(bartp1)->bartp2
+subset(betapa2,Sitio=="ato")->batop
+batop[,-1]->batop1
+colSums(batop1)->batop2
+subset(betapa2,Sitio=="cha")->bchap
+bchap[,-1]->bchap1
+colSums(bchap1)->bchap2
+subset(betapa2,Sitio=="cu")->bcup
+bcup[,-1]->bcup1
+colSums(bcup1)->bcup2
+subset(betapa2,Sitio=="eco")->becop
+becop[,-1]->becop1
+colSums(becop1)->becop2
+subset(betapa2,Sitio=="fue")->bfuep
+bfuep[,-1]->bfuep1
+colSums(bfuep1)->bfuep2
+subset(betapa2,Sitio=="jua")->bjuap
+bjuap[,-1]->bjuap1
+colSums(bjuap1)->bjuap2
+subset(betapa2,Sitio=="pab")->bpabp
+bpabp[,-1]->bpab1
+colSums(bpab1)->bpab2
+subset(betapa2,Sitio=="pan")->bpanp
+bpanp[,-1]->bpan1
+colSums(bpan1)->bpan2
+as.character(names(bpan2))->nombres
+betap<-matrix(c(bartp2,batop2,bchap2,bcup2,becop2,bfuep2,bjuap2,bpab2,bpan2),77,9)
+t(betap)->betap;betap
+colnames(betap)<-nombres
+rownames(betap)<-c("Arte","Atoyac","Chapulco","CU","Ecológico","Los Fuertes","Juarez","Paseo Bravo","Panteón")
+betap
+ifelse(betap>0,1,0)->betapsim
+t(betapsim)->betapsim2
+data.frame(betapsim)->betapsim;betapsim
+betapsim2<- betadiver(betapsim,"sim");betapsim2
+hclust(betapsim2,method="complete")->betapsim3
+1-betapsim2->betapsim4;betapsim4
+hclust(betapsim4,method="complete")->betapsim5
+#### Ahora para las áreas grises
+subset(datos1,Tipo=="cal")->betaca
+betaca[,1:81]->betaca1;betaca1
+betaca1[,-2:-4]->betaca2;betaca2
+subset(betaca2,Sitio=="art")->bartc
+bartc[,-1]->bartc1
+colSums(bartc1)->bartc2
+subset(betaca2,Sitio=="ato")->batoc
+batoc[,-1]->batoc1
+colSums(batoc1)->batoc2
+subset(betaca2,Sitio=="cha")->bchac
+bchac[,-1]->bchac1
+colSums(bchac1)->bchac2
+subset(betaca2,Sitio=="cu")->bcuc
+bcuc[,-1]->bcuc1
+colSums(bcuc1)->bcuc2
+subset(betaca2,Sitio=="eco")->becoc
+becoc[,-1]->becoc1
+colSums(becoc1)->becoc2
+subset(betaca2,Sitio=="fue")->bfuec
+bfuec[,-1]->bfuec1
+colSums(bfuec1)->bfuec2
+subset(betaca2,Sitio=="jua")->bjuac
+bjuac[,-1]->bjuac1
+colSums(bjuac1)->bjuac2
+subset(betaca2,Sitio=="pab")->bpabc
+bpabc[,-1]->bpabc1
+colSums(bpabc1)->bpabc2
+subset(betaca2,Sitio=="pan")->bpanc
+bpanc[,-1]->bpanc1
+colSums(bpanc1)->bpanc2
+as.character(names(bpanc2))->nombresc
+betac<-matrix(c(bartc2,batoc2,bchac2,bcuc2,becoc2,bfuec2,bjuac2,bpabc2,bpanc2),77,9)
+t(betac)->betac
+colnames(betac)<-nombresc
+rownames(betac)<-c("C.Arte","C.Atoyac","C.Chapulco","C.CU","C.Ecológico","C.Los fuertes","C.Juarez","C.Paseo bravo","C.Panteón")
+betac
+ifelse(betac>0,1,0)->betacsim
+t(betacsim)->betacsim2
+data.frame(betacsim)->betacsim;betacsim
+betacsim2<- betadiver(betacsim,"sim");betacsim2
+hclust(betacsim2,method="complete")->betacsim3
+plot(betacsim3)
+1-betacsim2->betacsim4
+hclust(betacsim4,method="complete")->betacsim5
+install.packages("ggdendro",dep=TRUE)
+library(ggplot2)
+library(ggdendro)
+ggdendrogram(betapsim5)+theme(axis.text.x = element_text(angle=30, hjust=1, vjust=1,colour="black"),axis.text.y=element_text(colour="black"),text=element_text(family="serif"))
+ggsave("/home/fertimjim/Documentos/Fer/datos tesis/imagenes/betap4.png",width=21, height=15,units="cm")
+ggdendrogram(betacsim5)+theme(axis.text.x = element_text(angle=30, hjust=1, vjust=1,colour="black"),axis.text.y=element_text(colour="black"),text=element_text(family="serif"))
+ggsave("/home/fertimjim/Documentos/Fer/datos tesis/imagenes/betac4.png",width=21, height=15,units="cm")
+\end{lstlisting}
+El perMANOVA
+\begin{lstlisting}
+datos1[,4]->visita
+as.factor(visita)->visita
+paste(datos1[,1],datos1[,2],sep="_")->peg
+adonis(datos2~peg+visita,permutations=99)->park2
+summary(park2)
+\end{lstlisting}
+Perfil de diversidad beta
+\begin{lstlisting}
+library(entropart)
+subset(datos1,Tipo=="par")->avepa;avepa
+names(avepa)
+avepa1<-avepa[,5:81];avepa1
+avepa2<-colSums(avepa1);avepa2
+as.numeric(avepa2)->avepam
+subset(ave2,Tipo=="cal")->aveca;aveca
+aveca1<-aveca[,5:81];aveca1
+aveca2<-colSums(aveca1);aveca2
+as.numeric(aveca2)->avecam
+data.frame(avepa2,seq(c(1:77)))->avema;avema
+rownames(avema)->names
+Calles<-avecam
+Parques<-avepam
+Especies<-names
+data.frame(avecam,avepam)->base
+rownames(base)<-names
+base
+c("calles","parques")->sitios
+colnames(base)<-sitios
+pesos<-c(1,1)
+MetaCommunity(base,pesos)->aveMC
+perfi <- DivProfile(seq(0, 2, 0.2), aveMC, Biased = FALSE)
+library(ggplot2)
+c(1.33,1.09,1.09)->beta
+c("q0","q1","q2")->Orden2
+c(1,2,3)->Orden3
+data.frame(beta,Orden2,Orden3)->betaj
+png(file="/home/fertimjim/Documentos/Fer/datos tesis/imagenes/perfilib.png",width=700, height=450,res=100)
+par(mar=c(5,3,2,2)+0.1)
+ggplot(betaj,aes(x=Orden2,y=beta))+geom_point()+geom_line(aes(x=Orden3))+theme(panel.background=element_blank(),axis.text.x=element_text(colour="black"),text=element_text(family="serif"),axis.text.y=element_text(colour="black"))->perfilib
+perfilib+ xlab("Orden") +ylab("Número de comunidades")
+dev.off()
+\end{lstlisting}
+Estos son los códigos de los análisis de diversidad usados para esta tesis. Los códigos para los análisis de gremios son los únicos que no están disponibles, cualquier duda o aclaración dirigirse al siguiente correo electrónico fertimjim@gmail.com. Espero les sea de gran ayuda.
+\end{document}
+
+
